@@ -1,0 +1,189 @@
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowLeft } from "lucide-react"
+import Link from "next/link"
+
+export default function PrivacyPolicy() {
+	return (
+		<div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-pink-50">
+			{/* Header */}
+			<header className="px-4 lg:px-6 h-16 flex items-center bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
+				<Link href="/public" className="flex items-center justify-center">
+					<div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
+						<span className="text-white font-bold text-sm">BB</span>
+					</div>
+					<span className="ml-2 text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+            The Big Bounce Bali
+          </span>
+				</Link>
+				<Link href="/public" className="ml-auto">
+					<Button variant="outline" size="sm" className="flex items-center gap-2 bg-transparent">
+						<ArrowLeft className="h-4 w-4" />
+						Back to Home
+					</Button>
+				</Link>
+			</header>
+			
+			<main className="flex-1 container px-4 md:px-6 py-8">
+				<div className="max-w-4xl mx-auto">
+					<div className="mb-8">
+						<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-4">
+							Privacy Policy
+						</h1>
+						<p className="text-gray-600 text-lg">Last updated: March 1, 2024</p>
+					</div>
+					
+					<div className="space-y-6">
+						<Card>
+							<CardHeader>
+								<CardTitle>1. Information We Collect</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									<strong>Personal Information:</strong> When you purchase tickets, we collect your name, email address,
+									phone number, and payment information. For children's tickets, we may collect the child's age and
+									parent/guardian contact information.
+								</p>
+								<p className="text-gray-700">
+									<strong>Event Information:</strong> We may collect information about your participation in activities,
+									photos taken during the event, and feedback provided.
+								</p>
+								<p className="text-gray-700">
+									<strong>Technical Information:</strong> Our website collects standard web analytics data including IP
+									addresses, browser type, and pages visited.
+								</p>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>2. How We Use Your Information</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">We use your personal information to:</p>
+								<ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+									<li>Process ticket purchases and send confirmations</li>
+									<li>Communicate important event updates and safety information</li>
+									<li>Provide customer support and respond to inquiries</li>
+									<li>Improve our services and event experience</li>
+									<li>Send promotional materials (with your consent)</li>
+									<li>Comply with legal requirements and safety regulations</li>
+								</ul>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>3. Information Sharing</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									We do not sell or rent your personal information to third parties. We may share your information with:
+								</p>
+								<ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+									<li>Payment processors to complete transactions</li>
+									<li>Event venue and security personnel for safety purposes</li>
+									<li>Emergency services if required for health and safety</li>
+									<li>Legal authorities when required by law</li>
+									<li>Service providers who assist with event operations (under strict confidentiality agreements)</li>
+								</ul>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>4. Data Security</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									We implement appropriate security measures to protect your personal information against unauthorized
+									access, alteration, disclosure, or destruction. This includes encryption of sensitive data, secure
+									servers, and limited access to personal information.
+								</p>
+								<p className="text-gray-700">
+									However, no method of transmission over the internet is 100% secure. While we strive to protect your
+									information, we cannot guarantee absolute security.
+								</p>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>5. Your Rights</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">You have the right to:</p>
+								<ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+									<li>Access and review your personal information</li>
+									<li>Request corrections to inaccurate information</li>
+									<li>Request deletion of your personal information (subject to legal requirements)</li>
+									<li>Opt-out of promotional communications</li>
+									<li>Request information about how your data is processed</li>
+								</ul>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>6. Cookies and Tracking</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									Our website uses cookies to improve your browsing experience, analyze website traffic, and remember
+									your preferences. You can control cookie settings through your browser, but disabling cookies may
+									affect website functionality.
+								</p>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>7. Children's Privacy</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									We do not knowingly collect personal information from children under 13 without parental consent. If
+									you believe we have collected information from a child under 13, please contact us immediately.
+								</p>
+							</CardContent>
+						</Card>
+						
+						<Card>
+							<CardHeader>
+								<CardTitle>8. Contact Us</CardTitle>
+							</CardHeader>
+							<CardContent className="space-y-4">
+								<p className="text-gray-700">
+									If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at:
+								</p>
+								<p className="text-gray-700">
+									Email: privacy@bigbouncebali.com
+									<br />
+									Phone: +62 361 123 4567
+									<br />
+									Address: Bali Convention Center, Jl. Bypass Ngurah Rai, Nusa Dua, Bali 80363
+								</p>
+							</CardContent>
+						</Card>
+					</div>
+				</div>
+			</main>
+			
+			{/* Footer */}
+			<footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white">
+				<p className="text-xs text-gray-500">© 2024 The Big Bounce Bali. All rights reserved.</p>
+				<nav className="sm:ml-auto flex gap-4 sm:gap-6">
+					<Link href="/terms" className="text-xs hover:underline underline-offset-4 text-gray-500">
+						Terms of Service
+					</Link>
+					<Link href="/privacy" className="text-xs hover:underline underline-offset-4 text-gray-500">
+						Privacy Policy
+					</Link>
+					<Link href="/safety" className="text-xs hover:underline underline-offset-4 text-gray-500">
+						Safety Guidelines
+					</Link>
+				</nav>
+			</footer>
+		</div>
+	)
+}
