@@ -6,24 +6,6 @@ import Link from "next/link"
 export default function PrivacyPolicy() {
 	return (
 		<div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-pink-50">
-			{/* Header */}
-			<header className="px-4 lg:px-6 h-16 flex items-center bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
-				<Link href="/public" className="flex items-center justify-center">
-					<div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
-						<span className="text-white font-bold text-sm">BB</span>
-					</div>
-					<span className="ml-2 text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-            The Big Bounce Bali
-          </span>
-				</Link>
-				<Link href="/public" className="ml-auto">
-					<Button variant="outline" size="sm" className="flex items-center gap-2 bg-transparent">
-						<ArrowLeft className="h-4 w-4" />
-						Back to Home
-					</Button>
-				</Link>
-			</header>
-			
 			<main className="flex-1 container px-4 md:px-6 py-8">
 				<div className="max-w-4xl mx-auto">
 					<div className="mb-8">

@@ -21,37 +21,6 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 	
 	return (
 		<div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-pink-50">
-			<header
-				className="px-4 lg:px-6 h-16 flex items-center justify-center bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
-				<div className="container flex items-center justify-between">
-					<Link href="/public" className="flex items-center justify-center">
-						<div
-							className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center">
-							<span className="text-white font-bold text-sm">BB</span>
-						</div>
-						<span
-							className="ml-2 text-xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
-            			The Big Bounce Bali
-          			</span>
-					</Link>
-					<nav className="ml-auto flex gap-4 sm:gap-6">
-						<a href="#about" className="text-sm font-medium hover:text-orange-600 transition-colors">
-							About
-						</a>
-						<a href="#attractions"
-							  className="text-sm font-medium hover:text-orange-600 transition-colors">
-							Attractions
-						</a>
-						<a href="#tickets" className="text-sm font-medium hover:text-orange-600 transition-colors">
-							Tickets
-						</a>
-						<a href="#info" className="text-sm font-medium hover:text-orange-600 transition-colors">
-							Info
-						</a>
-					</nav>
-				</div>
-			</header>
-			
 			<main className="flex-1">
 				{/* Hero Section */}
 				<section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden flex justify-center">
@@ -89,146 +58,6 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 									Watch Video
 								</Button>
 							</div>
-						</div>
-					</div>
-				</section>
-				
-				{/* About Section */}
-				<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white flex justify-center">
-					<div className="container px-4 md:px-6">
-						<div
-							className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] items-center">
-							<div className="flex flex-col justify-center space-y-4">
-								<div className="space-y-2">
-									<Badge className="bg-orange-100 text-orange-700 w-fit">About The Event</Badge>
-									<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bounce Into
-										Adventure</h2>
-									<p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-										The Big Bounce Bali features the worlds largest touring inflatable
-										entertainment experience. With
-										massive bounce houses, obstacle courses, and interactive games, its an
-										unforgettable adventure for
-										kids and adults alike.
-									</p>
-								</div>
-								<div className="grid grid-cols-2 gap-4">
-									<div className="flex items-center space-x-2">
-										<Users className="h-5 w-5 text-orange-500"/>
-										<span className="text-sm font-medium">All Ages Welcome</span>
-									</div>
-									<div className="flex items-center space-x-2">
-										<Star className="h-5 w-5 text-orange-500"/>
-										<span className="text-sm font-medium">World Record Size</span>
-									</div>
-								</div>
-							</div>
-							<Image
-								src="/img/hero.jpg"
-								width="550"
-								height="400"
-								alt="Giant inflatable bounce house"
-								className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-							/>
-						</div>
-					</div>
-				</section>
-				
-				{/* Attractions Section */}
-				<section
-					id="attractions"
-					className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-orange-50 to-pink-50 flex justify-center"
-				>
-					<div className="container px-4 md:px-6">
-						<div className="flex flex-col items-center justify-center space-y-4 text-center">
-							<Badge className="bg-pink-100 text-pink-700">Attractions</Badge>
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Epic Inflatable
-								Adventures</h2>
-							<p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-								Experience multiple massive inflatable attractions designed for maximum fun and
-								excitement
-							</p>
-						</div>
-						<div className="mx-auto flex max-w-5xl items-center justify-center gap-6 py-12 flex-wrap">
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="200"
-										alt="The Big Bounce House"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">The Big Bounce House</CardTitle>
-									<CardDescription>
-										The worlds largest bounce house - over 10,000 sq ft of bouncing madness!
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-pink-200 hover:border-pink-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="200"
-										alt="Obstacle Course"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-pink-600  mt-6">Obstacle Course</CardTitle>
-									<CardDescription>
-										Navigate through challenging inflatable obstacles, slides, and climbing walls.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="300"
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="300"
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width={300}
-										height={300}
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
 						</div>
 					</div>
 				</section>
@@ -373,72 +202,142 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 					</div>
 				</section>
 				
-				{/* Event Info Section */}
-				<section id="info"
-						 className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50 flex justify-center">
+				{/* Attractions Section */}
+				<section
+					id="attractions"
+					className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-orange-50 to-pink-50 flex justify-center"
+				>
 					<div className="container px-4 md:px-6">
-						<div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-							<Badge className="bg-blue-100 text-blue-700">Event Information</Badge>
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Plan Your Visit</h2>
+						<div className="flex flex-col items-center justify-center space-y-4 text-center">
+							<Badge className="bg-pink-100 text-pink-700">Attractions</Badge>
+							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Epic Inflatable
+								Adventures</h2>
+							<p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+								Experience multiple massive inflatable attractions designed for maximum fun and
+								excitement
+							</p>
 						</div>
-						<div className="mx-auto grid max-w-5xl items-start gap-6 lg:grid-cols-2">
-							<Card>
+						<div className="mx-auto flex max-w-5xl items-center justify-center gap-6 py-12 flex-wrap">
+							<Card
+								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
 								<CardHeader>
-									<CardTitle className="flex items-center">
-										<Calendar className="h-5 w-5 mr-2 text-blue-500"/>
-										Dates & Times
-									</CardTitle>
+									<Image
+										src="/img/300x300.jpg"
+										width="300"
+										height="200"
+										alt="The Big Bounce House"
+										className="rounded-lg object-cover w-full"
+									/>
+									<CardTitle className="text-orange-600 mt-6">The Big Bounce House</CardTitle>
+									<CardDescription>
+										The worlds largest bounce house - over 10,000 sq ft of bouncing madness!
+									</CardDescription>
 								</CardHeader>
-								<CardContent className="space-y-4">
-									<div>
-										<h4 className="font-semibold">Weekend Sessions</h4>
-										<p className="text-gray-600">Saturday & Sunday</p>
-										<p className="text-sm text-gray-500">March 15-17, 22-24, 29-31, 2024</p>
-									</div>
-									<div className="space-y-2">
-										<div className="flex items-center">
-											<Clock className="h-4 w-4 mr-2 text-blue-500"/>
-											<span className="text-sm">Kids Session: 9:00 AM - 10:30 AM</span>
-										</div>
-										<div className="flex items-center">
-											<Clock className="h-4 w-4 mr-2 text-blue-500"/>
-											<span className="text-sm">Family Session: 11:00 AM - 1:00 PM</span>
-										</div>
-										<div className="flex items-center">
-											<Clock className="h-4 w-4 mr-2 text-blue-500"/>
-											<span className="text-sm">VIP Session: 2:00 PM - 5:00 PM</span>
-										</div>
-									</div>
-								</CardContent>
 							</Card>
-							<Card>
+							<Card
+								className="border-2 border-pink-200 hover:border-pink-400 transition-colors w-[300px] h-[400px]">
 								<CardHeader>
-									<CardTitle className="flex items-center">
-										<MapPin className="h-5 w-5 mr-2 text-green-500"/>
-										Location & Contact
-									</CardTitle>
+									<Image
+										src="/img/300x300.jpg"
+										width="300"
+										height="200"
+										alt="Obstacle Course"
+										className="rounded-lg object-cover w-full"
+									/>
+									<CardTitle className="text-pink-600  mt-6">Obstacle Course</CardTitle>
+									<CardDescription>
+										Navigate through challenging inflatable obstacles, slides, and climbing walls.
+									</CardDescription>
 								</CardHeader>
-								<CardContent className="space-y-4">
-									<div>
-										<h4 className="font-semibold">Bali Convention Center</h4>
-										<p className="text-gray-600">Jl. Bypass Ngurah Rai</p>
-										<p className="text-gray-600">Nusa Dua, Bali 80363</p>
-									</div>
-									<div className="space-y-2">
-										<div className="flex items-center">
-											<Phone className="h-4 w-4 mr-2 text-green-500"/>
-											<span className="text-sm">+62 361 123 4567</span>
-										</div>
-										<div className="flex items-center">
-											<Mail className="h-4 w-4 mr-2 text-green-500"/>
-											<span className="text-sm">info@bigbouncebali.com</span>
-										</div>
-									</div>
-									<Button variant="outline" className="w-full bg-transparent">
-										Get Directions
-									</Button>
-								</CardContent>
 							</Card>
+							<Card
+								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
+								<CardHeader>
+									<Image
+										src="/img/300x300.jpg"
+										width="300"
+										height="300"
+										alt="Giant Slides"
+										className="rounded-lg object-cover w-full"
+									/>
+									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
+									<CardDescription>
+										Race down massive inflatable slides with multiple lanes for competitive fun.
+									</CardDescription>
+								</CardHeader>
+							</Card>
+							<Card
+								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
+								<CardHeader>
+									<Image
+										src="/img/300x300.jpg"
+										width="300"
+										height="300"
+										alt="Giant Slides"
+										className="rounded-lg object-cover w-full"
+									/>
+									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
+									<CardDescription>
+										Race down massive inflatable slides with multiple lanes for competitive fun.
+									</CardDescription>
+								</CardHeader>
+							</Card>
+							<Card
+								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
+								<CardHeader>
+									<Image
+										src="/img/300x300.jpg"
+										width={300}
+										height={300}
+										alt="Giant Slides"
+										className="rounded-lg object-cover w-full"
+									/>
+									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
+									<CardDescription>
+										Race down massive inflatable slides with multiple lanes for competitive fun.
+									</CardDescription>
+								</CardHeader>
+							</Card>
+						</div>
+					</div>
+				</section>
+				
+				{/* About Section */}
+				<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white flex justify-center">
+					<div className="container px-4 md:px-6">
+						<div
+							className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] items-center">
+							<div className="flex flex-col justify-center space-y-4">
+								<div className="space-y-2">
+									<Badge className="bg-orange-100 text-orange-700 w-fit">About The Event</Badge>
+									<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bounce Into
+										Adventure</h2>
+									<p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+										The Big Bounce Bali features the worlds largest touring inflatable
+										entertainment experience. With
+										massive bounce houses, obstacle courses, and interactive games, its an
+										unforgettable adventure for
+										kids and adults alike.
+									</p>
+								</div>
+								<div className="grid grid-cols-2 gap-4">
+									<div className="flex items-center space-x-2">
+										<Users className="h-5 w-5 text-orange-500"/>
+										<span className="text-sm font-medium">All Ages Welcome</span>
+									</div>
+									<div className="flex items-center space-x-2">
+										<Star className="h-5 w-5 text-orange-500"/>
+										<span className="text-sm font-medium">World Record Size</span>
+									</div>
+								</div>
+							</div>
+							<Image
+								src="/img/hero.jpg"
+								width="550"
+								height="400"
+								alt="Giant inflatable bounce house"
+								className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+							/>
 						</div>
 					</div>
 				</section>
