@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
 							<CardContent className="space-y-4">
 								<p className="text-gray-700">
 									<strong>Personal Information:</strong> When you purchase tickets, we collect your name, email address,
-									phone number, and payment information. For children's tickets, we may collect the child's age and
+									phone number, and payment information. For childrens tickets, we may collect the childs age and
 									parent/guardian contact information.
 								</p>
 								<p className="text-gray-700">
@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
 						
 						<Card>
 							<CardHeader>
-								<CardTitle>7. Children's Privacy</CardTitle>
+								<CardTitle>7. Childrens Privacy</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-4">
 								<p className="text-gray-700">
