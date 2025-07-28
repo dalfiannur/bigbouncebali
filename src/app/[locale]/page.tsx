@@ -1,17 +1,215 @@
 import {Button} from '@/components/ui/button'
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card'
 import {Badge} from '@/components/ui/badge'
-import {Calendar, Clock, Mail, MapPin, Phone, Star, Users} from 'lucide-react'
+import {AlertCircle, Timer} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {routing} from '@/i18n/routing'
 import {use} from 'react'
 import {setRequestLocale} from 'next-intl/server'
 import {useTranslations} from 'next-intl'
+import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/components/ui/dialog'
+import {Attraction} from '@/types/attraction'
+import {AboutSlide} from '@/types/about-slide'
+import {AboutSection} from '@/components/about-section'
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({locale}))
 }
+
+const attractions: Attraction[] = [
+	{
+		id: 'big-bounce',
+		title: 'The Big Bounce House',
+		shortDescription: 'The world\'s largest bounce house - over 10,000 sq ft of bouncing madness!',
+		fullDescription:
+			'Experience the ultimate bouncing adventure in the world\'s largest touring bounce house! This massive inflatable wonderland spans over 10,000 square feet and features multiple bouncing areas, obstacle courses, and interactive games. With towering walls, bouncing floors, and endless fun zones, it\'s designed to provide hours of entertainment for the whole family.',
+		image: '/img/300x300.jpg',
+		features: [
+			'10,000+ sq ft of bouncing space',
+			'Multiple themed bounce zones',
+			'Interactive obstacle elements',
+			'Safe enclosed environment',
+			'Professional supervision',
+			'Photo opportunities throughout'
+		],
+		ageRange: '3+ years (adult supervision required for under 8)',
+		capacity: 'Up to 100 people per session',
+		duration: 'Unlimited time during your session',
+		safetyNotes: [
+			'No shoes, jewelry, or sharp objects allowed',
+			'Adult supervision required for children under 8',
+			'Maximum weight limit: 300 lbs per person',
+			'No food or drinks inside the attraction'
+		],
+		color: 'orange'
+	},
+	{
+		id: 'obstacle-course',
+		title: 'Obstacle Course',
+		shortDescription: 'Navigate through challenging inflatable obstacles, slides, and climbing walls.',
+		fullDescription:
+			'Test your agility and endurance in our epic inflatable obstacle course! This challenging adventure features climbing walls, crawl tunnels, balance beams, and exciting slides. Race against friends or challenge yourself to beat your best time through this action-packed course designed for thrill-seekers of all ages.',
+		image: '/img/300x300.jpg',
+		features: [
+			'Multi-level climbing challenges',
+			'Tunnel crawls and balance tests',
+			'Racing lanes for competition',
+			'Timing system available',
+			'Victory slide at the end',
+			'Spectator viewing areas'
+		],
+		ageRange: '6+ years (recommended for active participants)',
+		capacity: 'Up to 50 people per session',
+		duration: 'Multiple runs encouraged during session',
+		safetyNotes: [
+			'Recommended for ages 6 and above',
+			'Good physical condition required',
+			'No pushing or rough play allowed',
+			'Wait for clear path before starting'
+		],
+		color: 'pink'
+	},
+	{
+		id: 'giant-slides-2',
+		title: 'Giant Slides',
+		shortDescription: 'Race down massive inflatable slides with multiple lanes for competitive fun.',
+		fullDescription:
+			'Feel the rush of adrenaline as you race down our towering inflatable slides! These massive slides feature multiple lanes for competitive racing, safety barriers, and soft landing zones. Whether you\'re racing friends or just enjoying the thrill of the ride, our giant slides provide an unforgettable experience with stunning views from the top.',
+		image: '/img/300x300.jpg',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		],
+		color: 'orange'
+	},
+	{
+		id: 'giant-slides',
+		title: 'Giant Slides',
+		shortDescription: 'Race down massive inflatable slides with multiple lanes for competitive fun.',
+		fullDescription:
+			'Feel the rush of adrenaline as you race down our towering inflatable slides! These massive slides feature multiple lanes for competitive racing, safety barriers, and soft landing zones. Whether you\'re racing friends or just enjoying the thrill of the ride, our giant slides provide an unforgettable experience with stunning views from the top.',
+		image: '/img/300x300.jpg',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		],
+		color: 'orange'
+	}
+]
+
+const aboutSlides: AboutSlide[] = [
+	{
+		id: 'main-event',
+		badge: 'About The Event',
+		badgeColor: 'orange',
+		title: 'Bounce Into Adventure',
+		description:
+			'The Big Bounce Bali features the world\'s largest touring inflatable entertainment experience. With massive bounce houses, obstacle courses, and interactive games, it\'s an unforgettable adventure for kids and adults alike.',
+		image: '/img/300x300.jpg',
+		features: [
+			{
+				icon: 'Users',
+				title: 'All Ages Welcome',
+				description: 'Fun for the entire family'
+			},
+			{
+				icon: 'Star',
+				title: 'World Record Size',
+				description: 'Officially the largest touring bounce house'
+			}
+		]
+	},
+	{
+		id: 'safety-first',
+		badge: 'Safety & Supervision',
+		badgeColor: 'green',
+		title: 'Your Safety is Our Priority',
+		description:
+			'We maintain the highest safety standards with professional supervision, regular equipment inspections, and comprehensive safety protocols. Our trained staff ensures everyone has a safe and enjoyable experience.',
+		image: '/img/300x300.jpg',
+		features: [
+			{
+				icon: 'Shield',
+				title: 'Professional Staff',
+				description: 'Trained safety supervisors on-site'
+			},
+			{
+				icon: 'UserCheck',
+				title: 'Regular Inspections',
+				description: 'Daily equipment safety checks'
+			}
+		]
+	},
+	{
+		id: 'family-fun',
+		badge: 'Family Experience',
+		badgeColor: 'pink',
+		title: 'Creating Magical Memories',
+		description:
+			'The Big Bounce Bali is designed to bring families together through shared adventure and laughter. Watch your children\'s faces light up as they explore our massive inflatable wonderland, while adults can join in the fun too!',
+		image: '/img/300x300.jpg',
+		features: [
+			{
+				icon: 'Heart',
+				title: 'Family Bonding',
+				description: 'Activities for all family members'
+			},
+			{
+				icon: 'Star',
+				title: 'Photo Opportunities',
+				description: 'Capture unforgettable moments'
+			}
+		]
+	},
+	{
+		id: 'world-tour',
+		badge: 'Global Experience',
+		badgeColor: 'blue',
+		title: 'World\'s Biggest Touring Event',
+		description:
+			'The Big Bounce has traveled across continents, bringing joy to millions of families worldwide. Now it\'s Bali\'s turn to experience this incredible phenomenon that has broken records and created countless memories.',
+		image: '/img/300x300.jpg',
+		features: [
+			{
+				icon: 'Award',
+				title: 'Award Winning',
+				description: 'Recognized globally for excellence'
+			},
+			{
+				icon: 'Users',
+				title: 'Millions Served',
+				description: 'Over 2 million happy customers worldwide'
+			}
+		]
+	}
+]
 
 export default function HomePage({params}: { params: Promise<Record<string, string>> }) {
 	const {locale} = use(params)
@@ -205,142 +403,127 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 				{/* Attractions Section */}
 				<section
 					id="attractions"
-					className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-orange-50 to-pink-50 flex justify-center"
+					className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-orange-50 to-pink-50"
 				>
-					<div className="container px-4 md:px-6">
+					<div className="container mx-auto px-4 md:px-6">
 						<div className="flex flex-col items-center justify-center space-y-4 text-center">
 							<Badge className="bg-pink-100 text-pink-700">Attractions</Badge>
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Epic Inflatable
 								Adventures</h2>
 							<p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Experience multiple massive inflatable attractions designed for maximum fun and
-								excitement
+								excitement. Click on
+								each attraction to learn more!
 							</p>
 						</div>
-						<div className="mx-auto flex max-w-5xl items-center justify-center gap-6 py-12 flex-wrap">
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="200"
-										alt="The Big Bounce House"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">The Big Bounce House</CardTitle>
-									<CardDescription>
-										The worlds largest bounce house - over 10,000 sq ft of bouncing madness!
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-pink-200 hover:border-pink-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="200"
-										alt="Obstacle Course"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-pink-600  mt-6">Obstacle Course</CardTitle>
-									<CardDescription>
-										Navigate through challenging inflatable obstacles, slides, and climbing walls.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="300"
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width="300"
-										height="300"
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
-							<Card
-								className="border-2 border-orange-200 hover:border-orange-400 transition-colors w-[300px] h-[400px]">
-								<CardHeader>
-									<Image
-										src="/img/300x300.jpg"
-										width={300}
-										height={300}
-										alt="Giant Slides"
-										className="rounded-lg object-cover w-full"
-									/>
-									<CardTitle className="text-orange-600 mt-6">Giant Slides</CardTitle>
-									<CardDescription>
-										Race down massive inflatable slides with multiple lanes for competitive fun.
-									</CardDescription>
-								</CardHeader>
-							</Card>
+						<div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-4">
+							{attractions.map((attraction) => (
+								<Dialog key={attraction.id}>
+									<DialogTrigger asChild>
+										<Card
+											className={`border-2 border-${attraction.color}-200 hover:border-${attraction.color}-400 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg`}
+										>
+											<CardHeader>
+												<Image
+													src={attraction.image || '/img/300x300.png'}
+													width="300"
+													height="200"
+													alt={attraction.title}
+													className="rounded-lg object-cover w-full"
+												/>
+												<CardTitle
+													className={`text-${attraction.color}-600 mt-4`}>{attraction.title}</CardTitle>
+												<CardDescription>{attraction.shortDescription}</CardDescription>
+												<Button
+													variant="outline"
+													size="sm"
+													className={`mt-2 border-${attraction.color}-500 text-${attraction.color}-600 hover:bg-${attraction.color}-50`}
+												>
+													Learn More →
+												</Button>
+											</CardHeader>
+										</Card>
+									</DialogTrigger>
+									<DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+										<DialogHeader>
+											<DialogTitle
+												className={`text-2xl font-bold text-${attraction.color}-600 mb-4`}>
+												{attraction.title}
+											</DialogTitle>
+										</DialogHeader>
+										
+										<div className="flex flex-col gap-6">
+											{/* Details Section */}
+											<div className="space-y-6">
+												{/* Description */}
+												<div>
+													<h3 className="text-lg font-semibold mb-2">About This
+														Attraction</h3>
+													<p className="text-gray-700 leading-relaxed">{attraction.fullDescription}</p>
+												</div>
+												
+												{/* Features */}
+												<div>
+													<h3 className="text-lg font-semibold mb-3">Features &
+														Highlights</h3>
+													<div className="grid gap-2">
+														{attraction.features.map((feature, index) => (
+															<div key={index} className="flex items-start space-x-2">
+                                <span
+									className={`w-2 h-2 bg-${attraction.color}-500 rounded-full mt-2 flex-shrink-0`}
+								></span>
+																<span className="text-sm text-gray-700">{feature}</span>
+															</div>
+														))}
+													</div>
+												</div>
+												
+												{/* Duration */}
+												<div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-lg">
+													<Timer className="h-5 w-5 text-blue-500"/>
+													<div>
+														<p className="text-sm font-medium text-blue-700">Duration</p>
+														<p className="text-sm text-blue-600">{attraction.duration}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										{/* Safety Information */}
+										<div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+											<div className="flex items-start space-x-2">
+												<AlertCircle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0"/>
+												<div className="flex-1">
+													<h4 className="font-semibold text-yellow-800 mb-2">Safety
+														Guidelines</h4>
+													<div className="grid gap-1">
+														{attraction.safetyNotes.map((note, index) => (
+															<p key={index} className="text-sm text-yellow-700">
+																• {note}
+															</p>
+														))}
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										{/* CTA Button */}
+										<div className="mt-6 flex justify-center">
+											<Button
+												size="lg"
+												className={`bg-gradient-to-r from-${attraction.color}-500 to-pink-500 hover:from-${attraction.color}-600 hover:to-pink-600 text-white px-8 py-3`}
+											>
+												Book Tickets for This Attraction
+											</Button>
+										</div>
+									</DialogContent>
+								</Dialog>
+							))}
 						</div>
 					</div>
 				</section>
 				
-				{/* About Section */}
-				<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white flex justify-center">
-					<div className="container px-4 md:px-6">
-						<div
-							className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] items-center">
-							<div className="flex flex-col justify-center space-y-4">
-								<div className="space-y-2">
-									<Badge className="bg-orange-100 text-orange-700 w-fit">About The Event</Badge>
-									<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Bounce Into
-										Adventure</h2>
-									<p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-										The Big Bounce Bali features the worlds largest touring inflatable
-										entertainment experience. With
-										massive bounce houses, obstacle courses, and interactive games, its an
-										unforgettable adventure for
-										kids and adults alike.
-									</p>
-								</div>
-								<div className="grid grid-cols-2 gap-4">
-									<div className="flex items-center space-x-2">
-										<Users className="h-5 w-5 text-orange-500"/>
-										<span className="text-sm font-medium">All Ages Welcome</span>
-									</div>
-									<div className="flex items-center space-x-2">
-										<Star className="h-5 w-5 text-orange-500"/>
-										<span className="text-sm font-medium">World Record Size</span>
-									</div>
-								</div>
-							</div>
-							<Image
-								src="/img/hero.jpg"
-								width="550"
-								height="400"
-								alt="Giant inflatable bounce house"
-								className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-							/>
-						</div>
-					</div>
-				</section>
+				<AboutSection items={aboutSlides}/>
 				
 				{/* CTA Section */}
 				<section
@@ -416,7 +599,7 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 						size="lg"
 						className="w-full bg-white text-orange-600 hover:bg-gray-100 font-bold text-lg py-4 rounded-xl transform hover:scale-105 transition-all duration-300"
 					>
-						🎟️ Buy Tickets Now - Limited Availability!
+						🎟️ Buy Tickets Now
 					</Button>
 				</div>
 			</div>
