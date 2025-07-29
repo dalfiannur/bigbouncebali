@@ -1,5 +1,43 @@
 {
   "UI": {
-    "get_ticket_now": "Get Tickets Now"
+    "get_ticket_now": "Get Tickets Now",
+    "person": "person"
+  },
+  "Tickets": {
+    "domestic_kids": {
+      "title": "Kids",
+      "age": "Ages 3-7 years (Indonesian)",
+      "price": "IDR 200K",
+      "features": {
+        "1": "90-minutes session",
+        "2": "All attractions access",
+        "3": "Safety supervision"
+      }
+    }
+  },
+  "Attractions": {
+    "thegiant": {
+      "title": "The Big Bounce House",
+      "short_description": "The world's largest bounce house - over 10,000 sq ft of bouncing madness!",
+      "full_description":
+      "Experience the ultimate bouncing adventure in the world's largest touring bounce house! This massive inflatable wonderland spans over 10,000 square feet and features multiple bouncing areas, obstacle courses, and interactive games. With towering walls, bouncing floors, and endless fun zones, it's designed to provide hours of entertainment for the whole family.",
+      "features": [
+        "10,000+ sq ft of bouncing space",
+        "Multiple themed bounce zones",
+        "Interactive obstacle elements",
+        "Safe enclosed environment",
+        "Professional supervision",
+        "Photo opportunities throughout"
+      ],
+      "age_range": "3+ years (adult supervision required for under 8)",
+      "capacity": "Up to 100 people per session",
+      "duration": "Unlimited time during your session",
+      "safety_notes": [
+        "No shoes, jewelry, or sharp objects allowed",
+        "Adult supervision required for children under 8",
+        "Maximum weight limit: 300 lbs per person",
+        "No food or drinks inside the attraction"
+      ]
+    }
   }
 }

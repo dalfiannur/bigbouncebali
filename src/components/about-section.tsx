@@ -43,7 +43,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 	
 	const goToSlide = (index: number) => {
 		setCurrentSlide(index)
-		setIsAutoPlaying(false)
+		// setIsAutoPlaying(false)
 	}
 	
 	const getIcon = (name: string, className: string) => {
@@ -53,7 +53,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 	
 	return (
 		<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
-			<div className="container mx-auto px-4 md:px-18">
+			<div className="container mx-auto px-4 md:px-8">
 				<div className="relative">
 					{/* Carousel Content */}
 					<div className="overflow-hidden">
@@ -101,23 +101,23 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 						</div>
 					</div>
 					
-					{/* Navigation Arrows */}
-					<Button
-						variant="outline"
-						size="icon"
-						className="absolute -left-14 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"
-						onClick={prevSlide}
-					>
-						<ChevronLeft className="h-4 w-4"/>
-					</Button>
-					<Button
-						variant="outline"
-						size="icon"
-						className="absolute -right-14 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"
-						onClick={nextSlide}
-					>
-						<ChevronRight className="h-4 w-4"/>
-					</Button>
+					{/*/!* Navigation Arrows *!/*/}
+					{/*<Button*/}
+					{/*	variant="outline"*/}
+					{/*	size="icon"*/}
+					{/*	className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"*/}
+					{/*	onClick={prevSlide}*/}
+					{/*>*/}
+					{/*	<ChevronLeft className="h-4 w-4"/>*/}
+					{/*</Button>*/}
+					{/*<Button*/}
+					{/*	variant="outline"*/}
+					{/*	size="icon"*/}
+					{/*	className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"*/}
+					{/*	onClick={nextSlide}*/}
+					{/*>*/}
+					{/*	<ChevronRight className="h-4 w-4"/>*/}
+					{/*</Button>*/}
 					
 					{/* Dots Indicator */}
 					<div className="flex justify-center space-x-2 mt-8">
@@ -133,21 +133,21 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 					</div>
 					
 					{/* Slide Counter */}
-					<div className="text-center mt-4">
-                <span className="text-sm text-gray-500">
-                  {currentSlide + 1} of {items.length}
-                </span>
-					</div>
-					<div className="text-center mt-2">
-						<Button
-							variant="ghost"
-							size="sm"
-							onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-							className="text-xs text-gray-500 hover:text-gray-700"
-						>
-							{isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}
-						</Button>
-					</div>
+				{/*	<div className="text-center mt-4">*/}
+                {/*<span className="text-sm text-gray-500">*/}
+                {/*  {currentSlide + 1} of {items.length}*/}
+                {/*</span>*/}
+				{/*	</div>*/}
+				{/*	<div className="text-center mt-2">*/}
+				{/*		<Button*/}
+				{/*			variant="ghost"*/}
+				{/*			size="sm"*/}
+				{/*			onClick={() => setIsAutoPlaying(!isAutoPlaying)}*/}
+				{/*			className="text-xs text-gray-500 hover:text-gray-700"*/}
+				{/*		>*/}
+				{/*			{isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}*/}
+				{/*		</Button>*/}
+				{/*	</div>*/}
 				</div>
 			</div>
 		</section>
