@@ -1,7 +1,7 @@
 import {Attraction} from '@/types/attraction'
 import {Badge} from '@/components/ui/badge'
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/components/ui/dialog'
-import {Card, CardDescription, CardHeader, CardTitle} from './ui/card'
+import {Card, CardDescription, CardTitle} from './ui/card'
 import Image from 'next/image'
 import {Button} from './ui/button'
 import {AlertCircle, Timer} from 'lucide-react'
@@ -31,27 +31,22 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 						<Dialog key={attraction.id}>
 							<DialogTrigger asChild>
 								<Card
-									className={`border-2 border-${attraction.color}-200 hover:border-${attraction.color}-400 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg`}
+									className={cn(`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg h-[350px]`, `border-${attraction.color}-200`, `hover:border-${attraction.color}-400`)}
 								>
-									<CardHeader>
+									<div className="px-6 flex flex-col h-full">
 										<Image
 											src={attraction.image || '/img/300x300.png'}
 											width="300"
-											height="200"
+											height="300"
 											alt={attraction.title}
-											className="rounded-lg object-cover w-full"
+											className="rounded-lg object-contain w-full aspect-[1.4/1]"
 										/>
-										<CardTitle
-											className={`text-${attraction.color}-600 mt-4 text-center`}>{attraction.title}</CardTitle>
-										<CardDescription>{attraction.shortDescription}</CardDescription>
-										<Button
-											variant="outline"
-											size="sm"
-											className={`mt-2 border-${attraction.color}-500 text-${attraction.color}-600 hover:bg-${attraction.color}-50`}
-										>
-											Learn More →
-										</Button>
-									</CardHeader>
+										<div className="flex-1">
+											<CardTitle
+												className={cn(`text-${attraction.color}-600 mt-4 text-center`)}>{attraction.title}</CardTitle>
+											<CardDescription className="mt-2">{attraction.shortDescription}</CardDescription>
+										</div>
+									</div>
 								</Card>
 							</DialogTrigger>
 							<DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">

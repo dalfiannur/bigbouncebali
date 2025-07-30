@@ -2,8 +2,7 @@
 
 import {Badge} from '@/components/ui/badge'
 import Image from 'next/image'
-import {Button} from '@/components/ui/button'
-import {Award, ChevronLeft, ChevronRight, Heart, LucideProps, Shield, Star, UserCheck, Users} from 'lucide-react'
+import {Award, Heart, LucideProps, Shield, Star, UserCheck, Users} from 'lucide-react'
 import {ForwardRefExoticComponent, RefAttributes, useEffect, useState} from 'react'
 import {AboutSlide} from '@/types/about-slide'
 
@@ -48,11 +47,11 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 	
 	const getIcon = (name: string, className: string) => {
 		const Icon = icons[name]
-		return <Icon className={className} />
+		return <Icon className={className}/>
 	}
 	
 	return (
-		<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+		<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white/20">
 			<div className="container mx-auto px-4 md:px-8">
 				<div className="relative">
 					{/* Carousel Content */}
@@ -64,7 +63,10 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 							{items.map((slide) => (
 								<div key={slide.id} className="w-full flex-shrink-0">
 									<div
-										className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px] items-center">
+										className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_700px] items-center"
+										onMouseEnter={() => setIsAutoPlaying(false)}
+										onMouseLeave={() => setIsAutoPlaying(true)}
+									>
 										<div className="flex flex-col justify-center space-y-4">
 											<div className="space-y-2">
 												<Badge
@@ -72,9 +74,8 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 													{slide.badge}
 												</Badge>
 												<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{slide.title}</h2>
-												<p className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-													{slide.description}
-												</p>
+												<p dangerouslySetInnerHTML={{__html: slide.description}}
+												   className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"/>
 											</div>
 											<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 												{slide.features.map((feature, featureIndex) => (
@@ -82,42 +83,27 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 														{getIcon(feature.icon, `h-5 w-5 text-${slide.badgeColor}-500`)}
 														<div>
 															<span className="text-sm font-medium">{feature.title}</span>
-															<p className="text-xs text-gray-500">{feature.description}</p>
+															{feature.description && (
+																<p className="text-xs text-gray-500">{feature.description}</p>
+															)}
 														</div>
 													</div>
 												))}
 											</div>
 										</div>
-										<Image
-											src={slide.image || '/placeholder.svg'}
-											width="550"
-											height="400"
-											alt={slide.title}
-											className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-										/>
+										<div className=" relative overflow-hidden rounded-xl w-[700px] h-[400px]">
+											<Image
+												src={slide.image}
+												alt={slide.title}
+												fill={true}
+												className="object-cover"
+											/>
+										</div>
 									</div>
 								</div>
 							))}
 						</div>
 					</div>
-					
-					{/*/!* Navigation Arrows *!/*/}
-					{/*<Button*/}
-					{/*	variant="outline"*/}
-					{/*	size="icon"*/}
-					{/*	className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"*/}
-					{/*	onClick={prevSlide}*/}
-					{/*>*/}
-					{/*	<ChevronLeft className="h-4 w-4"/>*/}
-					{/*</Button>*/}
-					{/*<Button*/}
-					{/*	variant="outline"*/}
-					{/*	size="icon"*/}
-					{/*	className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white z-10"*/}
-					{/*	onClick={nextSlide}*/}
-					{/*>*/}
-					{/*	<ChevronRight className="h-4 w-4"/>*/}
-					{/*</Button>*/}
 					
 					{/* Dots Indicator */}
 					<div className="flex justify-center space-x-2 mt-8">
@@ -133,21 +119,21 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 					</div>
 					
 					{/* Slide Counter */}
-				{/*	<div className="text-center mt-4">*/}
-                {/*<span className="text-sm text-gray-500">*/}
-                {/*  {currentSlide + 1} of {items.length}*/}
-                {/*</span>*/}
-				{/*	</div>*/}
-				{/*	<div className="text-center mt-2">*/}
-				{/*		<Button*/}
-				{/*			variant="ghost"*/}
-				{/*			size="sm"*/}
-				{/*			onClick={() => setIsAutoPlaying(!isAutoPlaying)}*/}
-				{/*			className="text-xs text-gray-500 hover:text-gray-700"*/}
-				{/*		>*/}
-				{/*			{isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}*/}
-				{/*		</Button>*/}
-				{/*	</div>*/}
+					{/*	<div className="text-center mt-4">*/}
+					{/*<span className="text-sm text-gray-500">*/}
+					{/*  {currentSlide + 1} of {items.length}*/}
+					{/*</span>*/}
+					{/*	</div>*/}
+					{/*	<div className="text-center mt-2">*/}
+					{/*		<Button*/}
+					{/*			variant="ghost"*/}
+					{/*			size="sm"*/}
+					{/*			onClick={() => setIsAutoPlaying(!isAutoPlaying)}*/}
+					{/*			className="text-xs text-gray-500 hover:text-gray-700"*/}
+					{/*		>*/}
+					{/*			{isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}*/}
+					{/*		</Button>*/}
+					{/*	</div>*/}
 				</div>
 			</div>
 		</section>

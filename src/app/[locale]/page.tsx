@@ -20,10 +20,10 @@ const attractions: Attraction[] = [
 	{
 		id: 'octoblast',
 		title: 'Octoblast',
-		shortDescription: 'Dive into an undersea party with ocean critters, special FX, and dance by the giant octopus and pufferfish stage!',
+		shortDescription: 'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. In Bali, near the sea breeze. Octo wants you to jump.',
 		fullDescription:
-			'DIVE INTO A DEEP SEA PARTY! Dive into a deep sea adventure unlike any other. Bounce your way into octoblast and come face to face with colorful ocean characters and special fx! You’ll meet deep-sea critters and dance around our giant octopus’s tentacles in front of the huge pufferfish stage. Be sure to bring your best moves for this underwater bash!',
-		image: '/img/300x300.jpg',
+			'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. Great for families & playful adults. In Bali, set near the sea breeze. Octo wants you to jump.',
+		image: '/img/octoblast.webp',
 		features: [
 			'Multi-level climbing challenges',
 			'Tunnel crawls and balance tests',
@@ -41,15 +41,15 @@ const attractions: Attraction[] = [
 			'No pushing or rough play allowed',
 			'Wait for clear path before starting'
 		],
-		color: 'pink'
+		color: 'green'
 	},
 	{
 		id: 'bounce-house',
 		title: 'The World’s Biggest Bounce House',
-		shortDescription: 'The world’s largest bounce house with slides, ball pits, DJ, games & colorful characters for all ages!',
+		shortDescription: 'The heart of the experience – the world’s largest inflatable. Endless jumps, ball pits, confetti blasts, and live DJs in Bali.',
 		fullDescription:
-			'Covering an area of over 16,000 square feet and standing 32 feet tall at its highest point, this inflatable goliath is the world’s largest bounce house. Inside you’ll find giant slides, ball pits, climbing towers, and basketball hoops beside fun, friendly, oversized characters of various colors, shapes, and sizes for those all-important instagram moments. At the center of this dreamland is a custom-built stage where the resident dj really turns up the party by playing music tailored to each age group while hosting games and competitions.',
-		image: '/img/300x300.jpg',
+			'The heart of the experience – the world’s largest inflatable. Endless jumps, ball pits, confetti blasts, and live DJ sets. In Bali, this turns into a vibrant bounce-temple with island lights & sounds. It’s chaos – the fun kind.',
+		image: '/img/the-worlds-biggest-bounce-house.webp',
 		features: [
 			'Multiple racing lanes',
 			'25+ feet of sliding excitement',
@@ -72,10 +72,10 @@ const attractions: Attraction[] = [
 	{
 		id: 'the-giant',
 		title: 'The Giant',
-		shortDescription: 'Race down massive inflatable slides with multiple lanes for competitive fun.',
+		shortDescription: 'A 300m+ inflatable obstacle race with slides, towers, and tunnels. Compete, race the clock, or just survive. Ready for The Giant Challenge?',
 		fullDescription:
-			'Feel the rush of adrenaline as you race down our towering inflatable slides! These massive slides feature multiple lanes for competitive racing, safety barriers, and soft landing zones. Whether you\'re racing friends or just enjoying the thrill of the ride, our giant slides provide an unforgettable experience with stunning views from the top.',
-		image: '/img/300x300.jpg',
+			'A 300m+ inflatable obstacle race packed with slides, towers, and tunnels. Compete with friends, beat the clock, or just survive the bounce. Are you ready for The Giant Challenge?',
+		image: '/img/the-giant.webp',
 		features: [
 			'Multiple racing lanes',
 			'25+ feet of sliding excitement',
@@ -96,12 +96,12 @@ const attractions: Attraction[] = [
 		color: 'orange'
 	},
 	{
-		id: 'airspace-pink-air',
-		title: 'Airspace Pink Air',
-		shortDescription: 'Race down massive inflatable slides with multiple lanes for competitive fun.',
+		id: 'airspace-pink',
+		title: 'Airspace Pink',
+		shortDescription: 'A cosmic bounce chamber glowing at night with inflatable creatures, soft mazes, and neon bounce. Alien-approved fun.',
 		fullDescription:
-			'Feel the rush of adrenaline as you race down our towering inflatable slides! These massive slides feature multiple lanes for competitive racing, safety barriers, and soft landing zones. Whether you\'re racing friends or just enjoying the thrill of the ride, our giant slides provide an unforgettable experience with stunning views from the top.',
-		image: '/img/300x300.jpg',
+			'A cosmic bounce chamber glowing at night – complete with inflatable creatures, soft mazes, and neon bounce. After dark, it glows like another planet. Alien-approved fun.',
+		image: '/img/airspace-pink-air.webp',
 		features: [
 			'Multiple racing lanes',
 			'25+ feet of sliding excitement',
@@ -124,10 +124,10 @@ const attractions: Attraction[] = [
 	{
 		id: 'sport-slam',
 		title: 'Sport Slam',
-		shortDescription: 'Race down massive inflatable slides with multiple lanes for competitive fun.',
+		shortDescription: 'Bounce-based sports arena for slam dunks, dodgeball, and relay races. In Bali, enjoy sunset beach tournaments.',
 		fullDescription:
-			'Feel the rush of adrenaline as you race down our towering inflatable slides! These massive slides feature multiple lanes for competitive racing, safety barriers, and soft landing zones. Whether you\'re racing friends or just enjoying the thrill of the ride, our giant slides provide an unforgettable experience with stunning views from the top.',
-		image: '/img/300x300.jpg',
+			'Bounce-based sports arena for slam dunks, dodgeball, and relay races. In Bali, expect sunset beach tournaments. Where bounce meets beach sports.',
+		image: '/img/sport-slam.webp',
 		features: [
 			'Multiple racing lanes',
 			'25+ feet of sliding excitement',
@@ -151,88 +151,100 @@ const attractions: Attraction[] = [
 
 const aboutSlides: AboutSlide[] = [
 	{
-		id: 'main-event',
-		badge: 'About The Event',
+		id: 'island-soul-garden',
+		badge: 'Additional Fest',
 		badgeColor: 'orange',
-		title: 'Bounce Into Adventure',
-		description:
-			'The Big Bounce Bali features the world\'s largest touring inflatable entertainment experience. With massive bounce houses, obstacle courses, and interactive games, it\'s an unforgettable adventure for kids and adults alike.',
-		image: '/img/300x300.jpg',
+		title: 'Island Soul Garden',
+		description: 'A surreal tribute to Bali’s most iconic (and ridiculous) tourist moments.',
+		image: '/img/island-soul-garden.webp',
 		features: [
 			{
-				icon: 'Users',
-				title: 'All Ages Welcome',
+				icon: 'Star',
+				title: 'The Shortcut',
 				description: 'Fun for the entire family'
 			},
 			{
 				icon: 'Star',
-				title: 'World Record Size',
-				description: 'Officially the largest touring bounce house'
-			}
-		]
-	},
-	{
-		id: 'safety-first',
-		badge: 'Safety & Supervision',
-		badgeColor: 'green',
-		title: 'Your Safety is Our Priority',
-		description:
-			'We maintain the highest safety standards with professional supervision, regular equipment inspections, and comprehensive safety protocols. Our trained staff ensures everyone has a safe and enjoyable experience.',
-		image: '/img/300x300.jpg',
-		features: [
-			{
-				icon: 'Shield',
-				title: 'Professional Staff',
-				description: 'Trained safety supervisors on-site'
-			},
-			{
-				icon: 'UserCheck',
-				title: 'Regular Inspections',
-				description: 'Daily equipment safety checks'
-			}
-		]
-	},
-	{
-		id: 'family-fun',
-		badge: 'Family Experience',
-		badgeColor: 'pink',
-		title: 'Creating Magical Memories',
-		description:
-			'The Big Bounce Bali is designed to bring families together through shared adventure and laughter. Watch your children\'s faces light up as they explore our massive inflatable wonderland, while adults can join in the fun too!',
-		image: '/img/300x300.jpg',
-		features: [
-			{
-				icon: 'Heart',
-				title: 'Family Bonding',
-				description: 'Activities for all family members'
+				title: 'The Detox Diva',
+				description: 'UBUDians in Full Zen Mode'
 			},
 			{
 				icon: 'Star',
-				title: 'Photo Opportunities',
-				description: 'Capture unforgettable moments'
+				title: 'The Canggu Gladiator',
+				description: 'Six-Pack, Selfie, Sprint'
+			},
+			{
+				icon: 'Star',
+				title: 'The Real MVP',
+				description: 'Super-Gojek to the Rescue'
 			}
 		]
 	},
 	{
-		id: 'world-tour',
-		badge: 'Global Experience',
-		badgeColor: 'blue',
-		title: 'World\'s Biggest Touring Event',
+		id: 'island-food-market',
+		badge: 'Additional Fest',
+		badgeColor: 'green',
+		title: 'Island Food Market',
 		description:
-			'The Big Bounce has traveled across continents, bringing joy to millions of families worldwide. Now it\'s Bali\'s turn to experience this incredible phenomenon that has broken records and created countless memories.',
-		image: '/img/300x300.jpg',
+			'A curated culinary experience for global tastes.<br/><br/>' +
+			'Island Food Market will feature 20 handpicked food & drink stalls, offering a delightful mix of tropical flavors, local bites, and international comfort food.\n\nEach tenant is carefully curated to reflect Bali’s vibrant culinary scene, ranging from smoothie bowls and seafood skewers to fusion snacks and plant-based treats.<br/><br />' +
+			'The entire market is designed to evoke the laid-back vibe of Bali’s Sunday markets, blending bohemian picnic setups, palm-lined walkways, and live DJ/acoustic sessions during the day.',
+		image: '/img/island-food-market.webp',
+		features: []
+	},
+	{
+		id: 'local-makers-market',
+		badge: 'Additional Fest',
+		badgeColor: 'pink',
+		title: 'Local Makers Market',
+		description:
+			'A vibrant space celebrating <b>Bali’s creative spirit</b>, where local artisans, indie brands, and conscious creators come together. This curated market features handcrafted goods, slow fashion, eco-friendly souvenirs, and unique art pieces that reflect the island’s soul. Perfect for visitors looking for meaningful keepsakes, stylish finds, or a chance to meet the makers behind the products.',
+		image: '/img/local-makers-market.webp',
 		features: [
 			{
-				icon: 'Award',
-				title: 'Award Winning',
-				description: 'Recognized globally for excellence'
+				icon: 'Star',
+				title: 'Handmade jewelry & accessories'
 			},
 			{
-				icon: 'Users',
-				title: 'Millions Served',
-				description: 'Over 2 million happy customers worldwide'
+				icon: 'Star',
+				title: 'Natural body care & wellness products'
+			},
+			{
+				icon: 'Star',
+				title: 'Bali-inspired fashion & textiles'
+			},
+			{
+				icon: 'Star',
+				title: 'Art prints, ceramics & home décor'
+			},
+			{
+				icon: 'Star',
+				title: 'Upcycled & sustainable goods'
 			}
 		]
+	},
+	{
+		id: 'live-acoustic-dj-sessions',
+		badge: 'Additional Fest',
+		badgeColor: 'blue',
+		title: 'Live Acoustic & DJ Sessions',
+		description:
+			'Throughout the day, enjoy soothing acoustic performances under the shade of palm trees, perfect for a lazy picnic or a breezy afternoon chill. As the sun sets, the energy shifts with sunset DJ sessions, featuring tropical house, disco grooves, and laid-back island beats to keep the festival spirit alive into the evening.<br/><br />' +
+			'Whether you\'re dancing barefoot on the grass or relaxing with a cold drink, our music lineup is designed to complement the island breeze and festival glow.',
+		image: '/img/live-acoustic-dj-session.webp',
+		features: []
+	},
+	{
+		id: 'sky-signal',
+		badge: 'Additional Fest',
+		badgeColor: 'red',
+		title: 'Sky Signal',
+		description:
+			'Every weekend during The Big Bounce Bali, we launch a series of giant kites from the Peninsula, floating high above Nusa Dua Bay.<br/><br />' +
+			'<b>Every Saturday & Sunday – 10:00 AM</b><br/>' +
+			'Launched from the open hill of Peninsula Island Best viewed from: coastal patchwalk, bay-side hotels, and boat traffic',
+		image: '/img/sky-signal.webp',
+		features: []
 	}
 ]
 
@@ -241,12 +253,13 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 	setRequestLocale(locale)
 	
 	return (
-		<div className="flex flex-col min-h-screen bg-[url(/img/tickets-background.jpg)] bg-cover bg-no-repeat bg-fixed">
+		<div
+			className="flex flex-col min-h-screen bg-[url(/img/tickets-background.webp)] bg-cover bg-no-repeat bg-fixed">
 			<main className="flex-1">
 				<HeroSection/>
 				<TicketSection/>
-				<AttractionSection items={attractions}/>
 				<AboutSection items={aboutSlides}/>
+				<AttractionSection items={attractions}/>
 				<CTASection/>
 			</main>
 			<Footer/>

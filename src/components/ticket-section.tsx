@@ -7,12 +7,11 @@ import {fonts} from '@/fonts'
 
 const tickets = [
 	{
-		id: 'domestic_kids',
+		id: 'domesticKids',
 		type: 'domestic',
 		title: 'Kids',
 		age: '3-7 years',
 		price: 'IDR 150K',
-		color: '#1c5129',
 		features: [
 			'All attractions access',
 			'Safety supervision',
@@ -20,12 +19,11 @@ const tickets = [
 		]
 	},
 	{
-		id: 'foreign_kids',
+		id: 'foreignKids',
 		type: 'foreign',
 		title: 'Kids',
 		age: '3-7 years',
 		price: 'IDR 250K',
-		color: '#fff445',
 		features: [
 			'All attractions access',
 			'Safety supervision',
@@ -33,12 +31,11 @@ const tickets = [
 		]
 	},
 	{
-		id: 'domestic_adults',
+		id: 'domesticAdult',
 		type: 'domestic',
 		title: 'Adults',
 		age: '18 years',
 		price: 'IDR 250K',
-		color: '#ff7e00',
 		features: [
 			'All attractions access',
 			'Safety supervision',
@@ -46,12 +43,11 @@ const tickets = [
 		]
 	},
 	{
-		id: 'foreign_adults',
+		id: 'foreignAdult',
 		type: 'foreign',
 		title: 'Adults',
 		age: '18 years',
 		price: 'IDR 350K',
-		color: '#ff2fa9',
 		features: [
 			'All attractions access',
 			'Safety supervision',
@@ -61,13 +57,12 @@ const tickets = [
 ]
 
 export const TicketSection = () => {
-	const tTickets = useTranslations('Tickets')
 	const tUI = useTranslations('UI')
 	
 	return (
 		<section id="tickets" className="w-full py-12 md:py-24 lg:py-32 flex justify-center relative">
 			<div
-				className="absolute top-0 right-0 z-10 left-0 min-h-36 bg-[url(/img/tickets-foreground.png)] bg-no-repeat bg-cover aspect-[12/5]"></div>
+				className="absolute top-0 right-0 z-10 left-0 min-h-36 bg-[url(/img/tickets-foreground.webp)] bg-no-repeat bg-cover aspect-[12/5]"></div>
 			<div className="container px-4 md:px-6 z-20 pt-72">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<Badge className="bg-green-100 text-green-700">Tickets</Badge>
@@ -80,20 +75,50 @@ export const TicketSection = () => {
 				<div className="mx-auto grid max-w-6xl items-center gap-6 py-12 lg:grid-cols-2 xl:grid-cols-4">
 					{tickets.map((ticket) => (
 						<Card key={ticket.id}
+							  data-type={ticket.id}
 							  className={cn(
 								  'border-2 transition-colors bg-white/40',
-								  `hover:border-[${ticket.color}]`
+								  'data-[type=domesticKids]:hover:border-[#1c5129]',
+								  'data-[type=foreignKids]:hover:border-[#fff445]',
+								  'data-[type=domesticAdult]:hover:border-[#ff7e00]',
+								  'data-[type=foreignAdult]:hover:border-[#ff2fa9]'
 							  )}
 						>
 							<CardHeader>
 								<Badge data-type={ticket.type}
-									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize">{ticket.type}</Badge>
-								<CardTitle className="text-center">{ticket.title}</CardTitle>
+									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize"
+								>
+									{ticket.type}
+								</Badge>
+								<CardTitle
+									data-type={ticket.id}
+									className={cn(
+										'text-center',
+										'data-[type=domesticKids]:text-[#1c5129]',
+										'data-[type=foreignKids]:text-[#fff445]',
+										'data-[type=domesticAdult]:text-[#ff7e00]',
+										'data-[type=foreignAdult]:text-[#ff2fa9]'
+									)}
+								>
+									{ticket.title}
+								</CardTitle>
 								<CardDescription
 									className="text-center text-black">{ticket.age}</CardDescription>
 								<div className="text-center">
 									<span
-										className="text-3xl font-bold text-[#1c5129]">{ticket.price}</span>
+										data-type={ticket.id}
+										className={
+											cn(
+												'text-3xl font-bold',
+												'data-[type=domesticKids]:text-[#1c5129]',
+												'data-[type=foreignKids]:text-[#fff445]',
+												'data-[type=domesticAdult]:text-[#ff7e00]',
+												'data-[type=foreignAdult]:text-[#ff2fa9]'
+											)
+										}
+									>
+										{ticket.price}
+									</span>
 									<span className="text-gray-950">/{tUI('person')}</span>
 								</div>
 							</CardHeader>
@@ -107,7 +132,17 @@ export const TicketSection = () => {
 									))}
 								</ul>
 								<Button
-									className={cn('w-full', `bg-[${ticket.color}]`, `hover:bg-[${ticket.color}]/80`)}>
+									data-type={ticket.id}
+									className={
+										cn(
+											'w-full',
+											'data-[type=domesticKids]:bg-[#1c5129]',
+											'data-[type=foreignKids]:bg-[#fff445]',
+											'data-[type=domesticAdult]:bg-[#ff7e00]',
+											'data-[type=foreignAdult]:bg-[#ff2fa9]'
+										)
+									}
+								>
 									Book Now
 								</Button>
 							</CardContent>

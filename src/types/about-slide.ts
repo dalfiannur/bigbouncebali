@@ -8,6 +8,6 @@ export interface AboutSlide {
 	features: Array<{
 		icon: string
 		title: string
-		description: string
+		description?: string
 	}>
 }
