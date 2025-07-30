@@ -66,8 +66,8 @@ export const TicketSection = () => {
 			<div className="container px-4 md:px-6 z-20 pt-72">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<Badge className="bg-green-100 text-green-700">Tickets</Badge>
-					<h2 className={cn('text-7xl font-bold text-green-900 tracking-wider', fonts.beachday.className)}>Choose
-						Your Adventure</h2>
+					<h3 className={cn('text-7xl font-bold text-green-900 tracking-wider', fonts.beachday.className)}>Choose
+						Your Adventure</h3>
 					<p className="max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 						Select the perfect ticket for your bouncing experience
 					</p>

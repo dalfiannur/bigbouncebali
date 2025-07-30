@@ -15,6 +15,8 @@ export function generateStaticParams() {
 	return routing.locales.map((locale) => ({locale}))
 }
 
+
+
 const attractions: Attraction[] = [
 	
 	{
@@ -253,18 +255,22 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 	setRequestLocale(locale)
 	
 	return (
-		<div
-			className="flex flex-col min-h-screen bg-[url(/img/tickets-background.webp)] bg-cover bg-no-repeat bg-fixed">
-			<main className="flex-1">
-				<HeroSection/>
-				<TicketSection/>
-				<AboutSection items={aboutSlides}/>
-				<AttractionSection items={attractions}/>
-				<CTASection/>
-			</main>
-			<Footer/>
-			<FloatingCTA/>
-			<FloatingCTAMobile/>
-		</div>
+		<>
+			<h1 className="hidden">The Big Bounce Bali</h1>
+			<h2 className="hidden">The Big Bounce Asia</h2>
+			<div
+				className="flex flex-col min-h-screen bg-[url(/img/tickets-background.webp)] bg-cover bg-no-repeat bg-fixed">
+				<main className="flex-1">
+					<HeroSection/>
+					<TicketSection/>
+					<AboutSection items={aboutSlides}/>
+					<AttractionSection items={attractions}/>
+					<CTASection/>
+				</main>
+				<Footer/>
+				<FloatingCTA/>
+				<FloatingCTAMobile/>
+			</div>
+		</>
 	)
 }

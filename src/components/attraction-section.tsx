@@ -17,9 +17,9 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<Badge className="bg-pink-100 text-pink-700">Attractions</Badge>
-					<h2 className={cn('text-7xl font-bold tracking-wider', fonts.beachday.className)}>
+					<h3 className={cn('text-7xl font-bold text-pink-500 tracking-wider', fonts.beachday.className)}>
 						The Big Bounce
-					</h2>
+					</h3>
 					<p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 						Experience multiple massive inflatable attractions designed for maximum fun and
 						excitement. Click on

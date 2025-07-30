@@ -3,10 +3,13 @@ import {notFound} from 'next/navigation'
 import {routing} from '@/i18n/routing'
 import {setRequestLocale} from 'next-intl/server'
 import {ReactNode} from 'react'
-import localFont from 'next/font/local'
 import '../globals.css'
+import {Metadata} from 'next'
 
-
+export const metadata: Metadata = {
+	title: 'Big Bounce Bali',
+	description: 'The Big Bounce Bali',
+}
 
 export default async function LocaleLayout({children, params}: {
 	children: ReactNode;

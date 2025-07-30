@@ -73,7 +73,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 													className={`bg-${slide.badgeColor}-100 text-${slide.badgeColor}-700 w-fit`}>
 													{slide.badge}
 												</Badge>
-												<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{slide.title}</h2>
+												<h4 className="text-3xl font-bold tracking-tighter sm:text-5xl">{slide.title}</h4>
 												<p dangerouslySetInnerHTML={{__html: slide.description}}
 												   className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"/>
 											</div>
