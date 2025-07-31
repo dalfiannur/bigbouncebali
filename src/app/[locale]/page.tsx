@@ -18,7 +18,6 @@ export function generateStaticParams() {
 
 
 const attractions: Attraction[] = [
-	
 	{
 		id: 'octoblast',
 		title: 'Octoblast',
@@ -27,15 +26,15 @@ const attractions: Attraction[] = [
 			'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. Great for families & playful adults. In Bali, set near the sea breeze. Octo wants you to jump.',
 		image: '/img/octoblast.webp',
 		features: [
-			'Multi-level climbing challenges',
-			'Tunnel crawls and balance tests',
-			'Racing lanes for competition',
-			'Timing system available',
-			'Victory slide at the end',
-			'Spectator viewing areas'
+			'Vibrant Fantasyland',
+			'Interactive Play Zones',
+			'Tangled Tentacles',
+			'Water Splash Fun',
+			'Ideal for Families & Playful Adults',
+			'Bali Breeze Setting'
 		],
 		ageRange: '6+ years (recommended for active participants)',
-		capacity: 'Up to 50 people per session',
+		capacity: 'Up to 100 people per session',
 		duration: 'Multiple runs encouraged during session',
 		safetyNotes: [
 			'Recommended for ages 6 and above',

@@ -16,8 +16,8 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 		>
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<Badge className="bg-pink-100 text-pink-700">Attractions</Badge>
-					<h3 className={cn('text-7xl font-bold text-pink-500 tracking-wider', fonts.beachday.className)}>
+					<Badge className="bg-orange-100 text-orange-700">Attractions</Badge>
+					<h3 className={cn('text-7xl font-bold text-orange-500 tracking-wider', fonts.beachday.className)}>
 						The Big Bounce
 					</h3>
 					<p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -43,8 +43,20 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 										/>
 										<div className="flex-1">
 											<CardTitle
-												className={cn(`text-${attraction.color}-600 mt-4 text-center`)}>{attraction.title}</CardTitle>
-											<CardDescription className="mt-2">{attraction.shortDescription}</CardDescription>
+												data-type={attraction.id}
+												className={cn(
+													'mt-4 text-center',
+													`data-[type=octoblast]:text-green-800`,
+													`data-[type=bounce-house]:text-red-500`,
+													`data-[type=the-giant]:text-orange-500`,
+													`data-[type=airspace-pink]:text-pink-500`,
+													`data-[type=sport-slam]:text-purple-500`
+												)}
+											>
+												{attraction.title}
+											</CardTitle>
+											<CardDescription
+												className="mt-2">{attraction.shortDescription}</CardDescription>
 										</div>
 									</div>
 								</Card>
@@ -52,7 +64,16 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 							<DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
 								<DialogHeader>
 									<DialogTitle
-										className={`text-2xl font-bold text-${attraction.color}-600 mb-4`}>
+										data-type={attraction.id}
+										className={cn(
+											`text-2xl mb-4`,
+											`data-[type=octoblast]:text-green-800`,
+											`data-[type=bounce-house]:text-red-500`,
+											`data-[type=the-giant]:text-orange-500`,
+											`data-[type=airspace-pink]:text-pink-500`,
+											`data-[type=sport-slam]:text-purple-500`
+										)}
+									>
 										{attraction.title}
 									</DialogTitle>
 								</DialogHeader>
@@ -74,9 +95,17 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 											<div className="grid gap-2">
 												{attraction.features.map((feature, index) => (
 													<div key={index} className="flex items-start space-x-2">
-                                <span
-									className={`w-2 h-2 bg-${attraction.color}-500 rounded-full mt-2 flex-shrink-0`}
-								></span>
+														<span
+															data-type={attraction.id}
+															className={cn(
+																`w-2 h-2 rounded-full mt-2 flex-shrink-0`,
+																`data-[type=octoblast]:bg-green-800`,
+																`data-[type=bounce-house]:bg-red-500`,
+																`data-[type=the-giant]:bg-orange-500`,
+																`data-[type=airspace-pink]:bg-pink-500`,
+																`data-[type=sport-slam]:bg-purple-500`
+															)}
+														></span>
 														<span className="text-sm text-gray-700">{feature}</span>
 													</div>
 												))}
@@ -116,7 +145,15 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 								<div className="mt-6 flex justify-center">
 									<Button
 										size="lg"
-										className={`bg-gradient-to-r from-${attraction.color}-500 to-pink-500 hover:from-${attraction.color}-600 hover:to-pink-600 text-white px-8 py-3`}
+										data-type={attraction.id}
+										className={cn(
+											`bg-gradient-to-r text-white px-8 py-3 cursor-pointer`,
+											`data-[type=octoblast]:from-green-800 data-[type=octoblast]:to-green-900 data-[type=octoblast]:hover:from-green-900 data-[type=octoblast]:hover:to-green-950`,
+											`data-[type=bounce-house]:from-red-500 data-[type=bounce-house]:to-red-600 data-[type=bounce-house]:hover:from-red-600 data-[type=bounce-house]:hover:to-red-700`,
+											`data-[type=the-giant]:from-orange-500 data-[type=the-giant]:to-orange-600 data-[type=the-giant]:hover:from-orange-600 data-[type=the-giant]:hover:to-orange-700`,
+											`data-[type=airspace-pink]:from-pink-500 data-[type=airspace-pink]:to-pink-600 data-[type=airspace-pink]:hover:from-pink-600 data-[type=airspace-pink]:hover:to-pink-700`,
+											`data-[type=sport-slam]:from-purple-500 data-[type=sport-slam]:to-purple-600 data-[type=sport-slam]:hover:from-purple-600 data-[type=sport-slam]:hover:to-purple-700`,
+										)}
 									>
 										Get Ticket Now
 									</Button>
