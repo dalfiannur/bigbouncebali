@@ -79,7 +79,7 @@ export const TicketSection = () => {
 				className="absolute top-0 right-0 z-10 left-0 min-h-36 bg-[url(/img/tickets-foreground.webp)] bg-no-repeat bg-cover aspect-[12/5]"></div>
 			<div className="container px-4 md:px-6 z-20 pt-72">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<h3 className={cn('text-7xl font-bold text-orange-400 tracking-wider', fonts.beachday.className)}>
+					<h3 className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-wider', fonts.beachday.className)}>
 						Choose Your Adventure
 					</h3>
 					<p className="max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
