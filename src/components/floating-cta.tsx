@@ -2,7 +2,7 @@ import {Button} from '@/components/ui/button'
 
 export const FloatingCTA = () => {
 	return (
-		<div className="fixed bottom-6 right-6 z-50">
+		<div className="fixed bottom-14 right-14 z-50">
 			<div className="relative">
 				{/* Pulsing ring animation */}
 				<div
