@@ -17,13 +17,6 @@ export const CTASection = () => {
 							  className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-3 text-lg">
 						  Book Tickets Now
 					  </Button>
-					  <Button
-						  size="lg"
-						  variant="outline"
-						  className="border-white text-white hover:bg-white/10 px-8 py-3 text-lg bg-transparent"
-					  >
-						  Learn More
-					  </Button>
 				  </div>
 			  </div>
 		  </div>
