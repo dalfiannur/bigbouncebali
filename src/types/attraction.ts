@@ -9,5 +9,4 @@ export interface Attraction {
 	capacity: string
 	duration: string
 	safetyNotes: string[]
-	color: string
 }
