@@ -25,24 +25,13 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 		
 		const interval = setInterval(() => {
 			setCurrentSlide((prev) => (prev + 1) % items.length)
-		}, 5000) // Change slide every 5 seconds
+		}, 5000)
 		
 		return () => clearInterval(interval)
 	}, [isAutoPlaying, items.length])
 	
-	const nextSlide = () => {
-		setCurrentSlide((prev) => (prev + 1) % items.length)
-		setIsAutoPlaying(false)
-	}
-	
-	const prevSlide = () => {
-		setCurrentSlide((prev) => (prev - 1 + items.length) % items.length)
-		setIsAutoPlaying(false)
-	}
-	
 	const goToSlide = (index: number) => {
 		setCurrentSlide(index)
-		// setIsAutoPlaying(false)
 	}
 	
 	const getIcon = (name: string, className: string) => {
@@ -54,7 +43,6 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 		<section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-white/20">
 			<div className="container mx-auto px-4 md:px-8">
 				<div className="relative">
-					{/* Carousel Content */}
 					<div className="overflow-hidden">
 						<div
 							className="flex transition-transform duration-500 ease-in-out"
