@@ -16,7 +16,6 @@ export function generateStaticParams() {
 }
 
 
-
 const attractions: Attraction[] = [
 	{
 		id: 'octoblast',
@@ -41,8 +40,7 @@ const attractions: Attraction[] = [
 			'Good physical condition required',
 			'No pushing or rough play allowed',
 			'Wait for clear path before starting'
-		],
-		color: 'green'
+		]
 	},
 	{
 		id: 'bounce-house',
@@ -67,8 +65,7 @@ const attractions: Attraction[] = [
 			'Slide feet-first only, no head-first sliding',
 			'Wait for previous slider to clear landing area',
 			'No standing or stopping on the slide'
-		],
-		color: 'orange'
+		]
 	},
 	{
 		id: 'the-giant',
@@ -93,8 +90,7 @@ const attractions: Attraction[] = [
 			'Slide feet-first only, no head-first sliding',
 			'Wait for previous slider to clear landing area',
 			'No standing or stopping on the slide'
-		],
-		color: 'orange'
+		]
 	},
 	{
 		id: 'airspace-pink',
@@ -119,8 +115,7 @@ const attractions: Attraction[] = [
 			'Slide feet-first only, no head-first sliding',
 			'Wait for previous slider to clear landing area',
 			'No standing or stopping on the slide'
-		],
-		color: 'orange'
+		]
 	},
 	{
 		id: 'sport-slam',
@@ -145,8 +140,7 @@ const attractions: Attraction[] = [
 			'Slide feet-first only, no head-first sliding',
 			'Wait for previous slider to clear landing area',
 			'No standing or stopping on the slide'
-		],
-		color: 'orange'
+		]
 	}
 ]
 
