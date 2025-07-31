@@ -51,7 +51,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 							{items.map((slide) => (
 								<div key={slide.id} className="w-full flex-shrink-0">
 									<div
-										className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_700px] items-center"
+										className="flex flex-col-reverse justify-between gap-6"
 										onMouseEnter={() => setIsAutoPlaying(false)}
 										onMouseLeave={() => setIsAutoPlaying(true)}
 									>
@@ -79,7 +79,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 												))}
 											</div>
 										</div>
-										<div className=" relative overflow-hidden rounded-xl w-[700px] h-[400px]">
+										<div className=" relative overflow-hidden rounded-xl w-full md:w-[700px] aspect-square">
 											<Image
 												src={slide.image}
 												alt={slide.title}
