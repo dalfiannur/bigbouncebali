@@ -16,7 +16,6 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 		>
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
-					<Badge className="bg-orange-100 text-orange-700">Attractions</Badge>
 					<h3 className={cn('text-7xl font-bold text-orange-500 tracking-wider', fonts.beachday.className)}>
 						The Big Bounce
 					</h3>
