@@ -7,7 +7,7 @@ export const HeroSection = () => {
 	
 	return (
 		<section
-			className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden flex justify-center aspect-[9/16] md:aspect-[12/5] bg-[url(/img/hero.webp)] bg-cover bg-no-repeat">
+			className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden flex justify-center aspect-[1/1.4] md:aspect-[12/5] bg-[url(/img/hero.webp)] bg-cover bg-no-repeat">
 			<button
 				className={cn('absolute bottom-0 bg-gradient-to-r from-[#f5c764] to-[#fa8c6f] hover:to-[#f5c764] hover:from-[#fa8c6f] text-white px-12 py-8 text-5xl font-bold rounded-3xl cursor-pointer animate-bounce', fonts.beachday.className)}
 			>
