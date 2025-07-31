@@ -1,21 +1,45 @@
 import Link from 'next/link'
+import {SiInstagram, SiTiktok} from '@icons-pack/react-simple-icons'
+import Image from 'next/image'
 
 export const Footer = () => {
 	return (
 		<footer
-			className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white">
-			<p className="text-xs text-gray-500">© {new Date().getFullYear()} The Big Bounce Bali. All rights reserved.</p>
-			<nav className="sm:ml-auto flex gap-4 sm:gap-6">
-				<Link href="/terms" className="text-xs hover:underline underline-offset-4 text-gray-500">
+			className="flex flex-col mb-14 p-6 bg-gradient-to-r from-orange-500 to-pink-500">
+			<div className="flex justify-center items-center gap-6 ">
+				<Link href="/">
+					<SiInstagram className="text-white hover:text-white" size="2em" title="Instagram" />
+				</Link>
+				<Link href="/">
+					<SiTiktok className="text-white hover:text-white" size="2em" title="Tiktok" />
+				</Link>
+			</div>
+			<div className="mt-6 flex justify-center items-center gap-6 ">
+				<Link href="/" className="text-white uppercase font-bold underline">
+					Magenta
+				</Link>
+				<Link href="/" className="text-white uppercase font-bold underline">
+					Incubase Studio
+				</Link>
+			</div>
+			<div className="mt-6 flex justify-center items-center">
+				<Image src="/img/magenta.webp" alt="Magenta & Incubase Studio" width={150} height={90} />
+			</div>
+			<nav className="mt-6 flex justify-center gap-4">
+				<Link href="/faqs" className="text-xs underline underline-offset-4 text-gray-200">
+					FAQs
+				</Link>
+				<Link href="/terms" className="text-xs underline underline-offset-4 text-gray-200">
 					Terms of Service
 				</Link>
-				<Link href="/privacy" className="text-xs hover:underline underline-offset-4 text-gray-500">
+				<Link href="/privacy" className="text-xs underline underline-offset-4 text-gray-200">
 					Privacy Policy
 				</Link>
-				<Link href="/safety" className="text-xs hover:underline underline-offset-4 text-gray-500">
-					Safety Guidelines
+				<Link href="/weather" className="text-xs underline underline-offset-4 text-gray-200">
+					Weather Policy
 				</Link>
 			</nav>
+			<p className="mt-6 text-xs text-center text-white">© {new Date().getFullYear()} The Big Bounce Bali. All rights reserved.</p>
 		</footer>
 	)
 }
