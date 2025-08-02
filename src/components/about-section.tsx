@@ -5,6 +5,7 @@ import Image from 'next/image'
 import {Award, Heart, LucideProps, Shield, Star, UserCheck, Users} from 'lucide-react'
 import {ForwardRefExoticComponent, RefAttributes, useEffect, useState} from 'react'
 import {AboutSlide} from '@/types/about-slide'
+import {cn} from '@/lib/utils'
 
 const icons: {
 	[key: string]: ForwardRefExoticComponent<Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>>
@@ -51,14 +52,23 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 							{items.map((slide) => (
 								<div key={slide.id} className="w-full flex-shrink-0">
 									<div
-										className="flex flex-col-reverse justify-between gap-6"
+										className="flex flex-col-reverse md:flex-row justify-between gap-6"
 										onMouseEnter={() => setIsAutoPlaying(false)}
 										onMouseLeave={() => setIsAutoPlaying(true)}
 									>
 										<div className="flex flex-col justify-center space-y-4">
 											<div className="space-y-2">
 												<Badge
-													className={`bg-${slide.badgeColor}-100 text-${slide.badgeColor}-700 w-fit`}>
+													data-type={slide.id}
+													className={cn(
+														`w-fit`,
+														`data-[type=a]:bg-green-100 data-[type=a]:text-green-700`,
+														`data-[type=a]:bg-red-100 data-[type=a]:text-red-700`,
+														`data-[type=a]:bg-orange-100 data-[type=a]:text-orange-700`,
+														`data-[type=a]:bg-pink-100 data-[type=a]:text-pink-700`,
+														`data-[type=a]:bg-purple-100 data-[type=a]:text-purple-700`
+													)}
+												>
 													{slide.badge}
 												</Badge>
 												<h4 className="text-3xl font-bold tracking-tighter sm:text-5xl">{slide.title}</h4>
@@ -68,7 +78,15 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 											<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 												{slide.features.map((feature, featureIndex) => (
 													<div key={featureIndex} className="flex items-center space-x-2">
-														{getIcon(feature.icon, `h-5 w-5 text-${slide.badgeColor}-500`)}
+														{getIcon(
+															feature.icon, cn(
+																`h-5 w-5`, `data-[type=a]:text-green-700`,
+																`data-[type=a]:text-red-700`,
+																`data-[type=a]:text-orange-700`,
+																`data-[type=a]:text-pink-700`,
+																`data-[type=a]:text-purple-700`
+															)
+														)}
 														<div>
 															<span className="text-sm font-medium">{feature.title}</span>
 															{feature.description && (
@@ -79,7 +97,8 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 												))}
 											</div>
 										</div>
-										<div className=" relative overflow-hidden rounded-xl w-full md:w-[700px] aspect-square">
+										<div
+											className=" relative overflow-hidden rounded-xl w-full md:w-[700px] aspect-square">
 											<Image
 												src={slide.image}
 												alt={slide.title}
@@ -105,23 +124,6 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 							/>
 						))}
 					</div>
-					
-					{/* Slide Counter */}
-					{/*	<div className="text-center mt-4">*/}
-					{/*<span className="text-sm text-gray-500">*/}
-					{/*  {currentSlide + 1} of {items.length}*/}
-					{/*</span>*/}
-					{/*	</div>*/}
-					{/*	<div className="text-center mt-2">*/}
-					{/*		<Button*/}
-					{/*			variant="ghost"*/}
-					{/*			size="sm"*/}
-					{/*			onClick={() => setIsAutoPlaying(!isAutoPlaying)}*/}
-					{/*			className="text-xs text-gray-500 hover:text-gray-700"*/}
-					{/*		>*/}
-					{/*			{isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}*/}
-					{/*		</Button>*/}
-					{/*	</div>*/}
 				</div>
 			</div>
 		</section>

@@ -146,9 +146,9 @@ const attractions: Attraction[] = [
 
 const aboutSlides: AboutSlide[] = [
 	{
-		id: 'island-soul-garden',
+		id: 'a',
 		badge: 'Additional Fest',
-		badgeColor: 'orange',
+		badgeColor: 'green',
 		title: 'Island Soul Garden',
 		description: 'A surreal tribute to Bali’s most iconic (and ridiculous) tourist moments.',
 		image: '/img/island-soul-garden.webp',
@@ -176,9 +176,9 @@ const aboutSlides: AboutSlide[] = [
 		]
 	},
 	{
-		id: 'island-food-market',
+		id: 'b',
 		badge: 'Additional Fest',
-		badgeColor: 'green',
+		badgeColor: 'red',
 		title: 'Island Food Market',
 		description:
 			'A curated culinary experience for global tastes.<br/><br/>' +
@@ -188,9 +188,9 @@ const aboutSlides: AboutSlide[] = [
 		features: []
 	},
 	{
-		id: 'local-makers-market',
+		id: 'c',
 		badge: 'Additional Fest',
-		badgeColor: 'pink',
+		badgeColor: 'orange',
 		title: 'Local Makers Market',
 		description:
 			'A vibrant space celebrating <b>Bali’s creative spirit</b>, where local artisans, indie brands, and conscious creators come together. This curated market features handcrafted goods, slow fashion, eco-friendly souvenirs, and unique art pieces that reflect the island’s soul. Perfect for visitors looking for meaningful keepsakes, stylish finds, or a chance to meet the makers behind the products.',
@@ -219,9 +219,9 @@ const aboutSlides: AboutSlide[] = [
 		]
 	},
 	{
-		id: 'live-acoustic-dj-sessions',
+		id: 'd',
 		badge: 'Additional Fest',
-		badgeColor: 'blue',
+		badgeColor: 'pink',
 		title: 'Live Acoustic & DJ Sessions',
 		description:
 			'Throughout the day, enjoy soothing acoustic performances under the shade of palm trees, perfect for a lazy picnic or a breezy afternoon chill. As the sun sets, the energy shifts with sunset DJ sessions, featuring tropical house, disco grooves, and laid-back island beats to keep the festival spirit alive into the evening.<br/><br />' +
@@ -230,9 +230,9 @@ const aboutSlides: AboutSlide[] = [
 		features: []
 	},
 	{
-		id: 'sky-signal',
+		id: 'e',
 		badge: 'Additional Fest',
-		badgeColor: 'red',
+		badgeColor: 'purple',
 		title: 'Sky Signal',
 		description:
 			'Every weekend during The Big Bounce Bali, we launch a series of giant kites from the Peninsula, floating high above Nusa Dua Bay.<br/><br />' +
