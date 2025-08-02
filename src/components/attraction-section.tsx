@@ -3,11 +3,150 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@
 import {Card, CardDescription, CardTitle} from './ui/card'
 import Image from 'next/image'
 import {Button} from './ui/button'
-import {AlertCircle, Timer} from 'lucide-react'
 import {cn} from '@/lib/utils'
 import {fonts} from '@/fonts'
 
-export const AttractionSection = ({items}: { items: Attraction[] }) => {
+const attractions: Attraction[] = [
+	{
+		id: 'octoblast',
+		title: 'Octoblast',
+		shortDescription: 'For ocean lovers who’d dive into anything. Bounce like a jellyfish and get soaked in our all-day foam party.',
+		fullDescription:
+			'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. Great for families & playful adults. In Bali, set near the sea breeze. Octo wants you to jump.',
+		image: '/img/octoblast.webp',
+		features: [
+			'Vibrant Fantasyland',
+			'Interactive Play Zones',
+			'Tangled Tentacles',
+			'Water Splash Fun',
+			'Ideal for Families & Playful Adults',
+			'Bali Breeze Setting'
+		],
+		ageRange: '6+ years (recommended for active participants)',
+		capacity: 'Up to 100 people per session',
+		duration: 'Multiple runs encouraged during session',
+		safetyNotes: [
+			'Recommended for ages 6 and above',
+			'Good physical condition required',
+			'No pushing or rough play allowed',
+			'Wait for clear path before starting'
+		]
+	},
+	{
+		id: 'bounce-house',
+		title: 'The World’s Biggest Bounce House',
+		shortDescription: 'Where the music hits and the floor moves with you. Live DJs, confetti storms, and sunset silent bounce sessions',
+		fullDescription:
+			'The heart of the experience – the world’s largest inflatable. Endless jumps, ball pits, confetti blasts, and live DJ sets. In Bali, this turns into a vibrant bounce-temple with island lights & sounds. It’s chaos – the fun kind.',
+		image: '/img/the-worlds-biggest-bounce-house.webp',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		]
+	},
+	{
+		id: 'the-giant',
+		title: 'The Giant',
+		shortDescription: 'Try surviving 300 meters of inflatable madness. it’s fun until it humbles you.',
+		fullDescription:
+			'A 300m+ inflatable obstacle race packed with slides, towers, and tunnels. Compete with friends, beat the clock, or just survive the bounce. Are you ready for The Giant Challenge?',
+		image: '/img/the-giant.webp',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		]
+	},
+	{
+		id: 'airspace-pink',
+		title: 'Airspace Pink',
+		shortDescription: 'For grown-ups who still secretly love ball pits. Glowing, surreal, and strangely satisfying.',
+		fullDescription:
+			'A cosmic bounce chamber glowing at night – complete with inflatable creatures, soft mazes, and neon bounce. After dark, it glows like another planet. Alien-approved fun.',
+		image: '/img/airspace-pink-air.webp',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		]
+	},
+	{
+		id: 'sport-slam',
+		title: 'Sport Slam',
+		shortDescription: 'For the ones who never skip leg day,  even at a festival. Bounce, battle, and brag with your crew in this inflatable arena.',
+		fullDescription:
+			'Bounce-based sports arena for slam dunks, dodgeball, and relay races. In Bali, expect sunset beach tournaments. Where bounce meets beach sports.',
+		image: '/img/sport-slam.webp',
+		features: [
+			'Multiple racing lanes',
+			'25+ feet of sliding excitement',
+			'Soft landing cushions',
+			'Safety barriers throughout',
+			'Climbing steps with handrails',
+			'Perfect for group competitions'
+		],
+		ageRange: '5+ years (height minimum: 42 inches)',
+		capacity: 'Up to 30 people per session',
+		duration: 'Unlimited slides during your session',
+		safetyNotes: [
+			'Minimum height requirement: 42 inches',
+			'Slide feet-first only, no head-first sliding',
+			'Wait for previous slider to clear landing area',
+			'No standing or stopping on the slide'
+		]
+	}
+]
+
+const Keys = ['octoblast', 'bounce-house', 'the-giant', 'airspace-pink', 'sport-slam']
+
+const images: {
+	[key in typeof Keys[number]]: string[]
+} = {
+	octoblast: new Array(9).fill(0).map((_, i) => `/img/attractions/octoblast/${i + 1}.webp`),
+	'bounce-house': new Array(11).fill(0).map((_, i) => `/img/attractions/bounce-house/${i + 1}.webp`),
+	'the-giant': new Array(6).fill(0).map((_, i) => `/img/attractions/the-giant/${i + 1}.webp`),
+	'airspace-pink': new Array(5).fill(0).map((_, i) => `/img/attractions/airspace-pink/${i + 1}.webp`),
+	'sport-slam': new Array(7).fill(0).map((_, i) => `/img/attractions/sport-slam/${i + 1}.webp`)
+}
+
+export const AttractionSection = () => {
 	return (
 		<section
 			id="attractions"
@@ -25,7 +164,7 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 					</p>
 				</div>
 				<div className="mx-auto grid items-center gap-6 py-12 lg:grid-cols-5">
-					{items.map((attraction) => (
+					{attractions.map((attraction) => (
 						<Dialog key={attraction.id}>
 							<DialogTrigger asChild>
 								<Card
@@ -67,7 +206,7 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 									</div>
 								</Card>
 							</DialogTrigger>
-							<DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+							<DialogContent className="max-h-[90vh] overflow-y-auto">
 								<DialogHeader>
 									<DialogTitle
 										data-type={attraction.id}
@@ -84,67 +223,14 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 									</DialogTitle>
 								</DialogHeader>
 								
-								<div className="flex flex-col gap-6">
-									{/* Details Section */}
-									<div className="space-y-6">
-										{/* Description */}
-										<div>
-											<h3 className="text-lg font-semibold mb-2">About This
-												Attraction</h3>
-											<p className="text-gray-700 leading-relaxed">{attraction.fullDescription}</p>
+								<div className="grid w-full gap-4">
+									{images[attraction.id].map((image, i) => (
+										<div key={i} className="relative w-full aspect-square rounded overflow-hidden">
+											<Image src={image} alt={attraction.title}
+												   className="rounded-lg object-cover" fill/>
 										</div>
-										
-										{/* Features */}
-										<div>
-											<h3 className="text-lg font-semibold mb-3">Features &
-												Highlights</h3>
-											<div className="grid gap-2">
-												{attraction.features.map((feature, index) => (
-													<div key={index} className="flex items-start space-x-2">
-														<span
-															data-type={attraction.id}
-															className={cn(
-																`w-2 h-2 rounded-full mt-2 flex-shrink-0`,
-																`data-[type=octoblast]:bg-green-800`,
-																`data-[type=bounce-house]:bg-red-500`,
-																`data-[type=the-giant]:bg-orange-500`,
-																`data-[type=airspace-pink]:bg-pink-500`,
-																`data-[type=sport-slam]:bg-purple-500`
-															)}
-														></span>
-														<span className="text-sm text-gray-700">{feature}</span>
-													</div>
-												))}
-											</div>
-										</div>
-										
-										{/* Duration */}
-										<div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-lg">
-											<Timer className="h-5 w-5 text-blue-500"/>
-											<div>
-												<p className="text-sm font-medium text-blue-700">Duration</p>
-												<p className="text-sm text-blue-600">{attraction.duration}</p>
-											</div>
-										</div>
-									</div>
-								</div>
+									))}
 								
-								{/* Safety Information */}
-								<div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-									<div className="flex items-start space-x-2">
-										<AlertCircle className="h-5 w-5 text-yellow-600 mt-0.5 flex-shrink-0"/>
-										<div className="flex-1">
-											<h4 className="font-semibold text-yellow-800 mb-2">Safety
-												Guidelines</h4>
-											<div className="grid gap-1">
-												{attraction.safetyNotes.map((note, index) => (
-													<p key={index} className="text-sm text-yellow-700">
-														• {note}
-													</p>
-												))}
-											</div>
-										</div>
-									</div>
 								</div>
 								
 								{/* CTA Button */}
