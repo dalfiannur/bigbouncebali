@@ -4,19 +4,17 @@ export const FloatingCTA = () => {
 	return (
 		<div className="hidden md:block fixed bottom-14 right-14 z-50">
 			<div className="relative">
-				{/* Pulsing ring animation */}
 				<div
 					className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-ping opacity-75"></div>
 				<div
 					className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse opacity-50"></div>
 				
-				{/* Main CTA Button */}
 				<Button
 					size="lg"
-					className="relative bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg border-4 border-white"
+					className="relative h-20 w-20 bg-white hover:bg-yellow-200  px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg border-4 border-white"
 				>
 					<div className="flex flex-col items-center">
-						<span className="text-sm font-normal">🎟️ Get Tickets</span>
+						<span className="text-5xl font-normal">🎟️</span>
 					</div>
 				</Button>
 			</div>
