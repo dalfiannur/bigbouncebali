@@ -9,63 +9,66 @@ const tickets = [
 	{
 		id: 'a',
 		type: 'all',
-		title: 'Entry Pass Only',
+		title: 'Entry Pass',
 		price: 'IDR 50K',
+		per: 'person',
 		features: [
-			'Entry',
-			'F&B 50K',
-			'Full Day Session',
-			'No Bounce Access',
+			'1 pax entry',
+			'50K F&B voucher',
+			'No bounce access',
+			'Full-day session'
 		]
 	},
 	{
 		id: 'b',
 		type: 'domestic',
-		title: 'Full Day Pass',
+		title: 'All-Access Pass',
 		price: 'IDR 150K',
+		per: 'person',
 		features: [
-			'Entry',
-			'Unlimited Bounce',
-			'F&B 50K',
-			'Full Day Session'
+			'1 pax entry',
+			'50K F&B voucher',
+			'Unlimited bounce',
+			'Full-day session'
 		]
 	},
 	{
 		id: 'c',
 		type: 'foreign',
-		title: 'Full Day Pass',
+		title: 'All-Access Pass',
 		price: 'IDR 250K',
+		per: 'person',
 		features: [
-			'Entry',
-			'Unlimited Bounce',
-			'F&B 50K',
-			'Full Day Session'
+			'1 pax entry',
+			'50K F&B voucher',
+			'Unlimited bounce',
+			'Full-day session'
 		]
 	},
 	{
 		id: 'd',
 		type: 'domestic',
-		title: '4 Combo Full Day Pass',
+		title: '4 All-Access Pass',
 		price: 'IDR 480K',
+		per: '4 pax',
 		features: [
-			'4 Pax',
-			'Entry',
-			'Unlimited Bounce',
-			'F&B 50K',
-			'Full Day Session'
+			'4 pax entry',
+			'4x 50K F&B voucher',
+			'Unlimited bounce',
+			'Full-day session'
 		]
 	},
 	{
 		id: 'e',
 		type: 'foreign',
-		title: '4 Combo Full Day Pass',
+		title: '4 All-Access Pass',
 		price: 'IDR 800K',
+		per: '4 pax',
 		features: [
-			'4 pax',
-			'Entry',
-			'Unlimited Bounce',
-			'F&B 50K',
-			'Full Day Session'
+			'4 pax entry',
+			'4x 50K F&B voucher',
+			'Unlimited bounce',
+			'Full-day session'
 		]
 	}
 ]
@@ -78,10 +81,10 @@ export const TicketSection = () => {
 			<div className="container px-4 md:px-6 z-20">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<h3 className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-wider', fonts.beachday.className)}>
-						Choose Your Adventure
+						Pick Your Pass
 					</h3>
 					<p className="max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-						Select the perfect ticket for your bouncing experience
+						Each ticket includes a 50K F&B voucher, redeemable at selected tenants.
 					</p>
 				</div>
 				<div className="mx-auto grid max-w-7xl items-center gap-6 py-12 lg:grid-cols-2 xl:grid-cols-5">
@@ -101,7 +104,7 @@ export const TicketSection = () => {
 								<Badge data-type={ticket.type}
 									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize"
 								>
-									{ticket.type}
+									{ticket.type === 'all' ? 'All' : ticket.type === 'domestic' ? 'Domestic & KITAS' : 'Foreign'}
 								</Badge>
 								<CardTitle
 									data-type={ticket.id}
@@ -132,7 +135,7 @@ export const TicketSection = () => {
 									>
 										{ticket.price}
 									</span>
-									<span className="text-gray-950">/{tUI('person')}</span>
+									<span className="text-gray-950">/{ticket.per}</span>
 								</div>
 							</CardHeader>
 							<CardContent className="flex-1 flex flex-col justify-between">
