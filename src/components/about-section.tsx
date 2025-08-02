@@ -73,7 +73,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 												</Badge>
 												<h4 className="text-3xl font-bold tracking-tighter sm:text-5xl">{slide.title}</h4>
 												<p dangerouslySetInnerHTML={{__html: slide.description}}
-												   className="max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"/>
+												   className="max-w-[700px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"/>
 											</div>
 											<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 												{slide.features.map((feature, featureIndex) => (
@@ -98,7 +98,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 											</div>
 										</div>
 										<div
-											className=" relative overflow-hidden rounded-xl w-full md:w-[700px] aspect-square">
+											className=" relative overflow-hidden rounded-xl w-full md:w-[500px] aspect-video">
 											<Image
 												src={slide.image}
 												alt={slide.title}

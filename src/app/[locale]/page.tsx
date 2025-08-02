@@ -150,30 +150,9 @@ const aboutSlides: AboutSlide[] = [
 		badge: 'Additional Fest',
 		badgeColor: 'green',
 		title: 'Island Soul Garden',
-		description: 'A surreal tribute to Bali’s most iconic (and ridiculous) tourist moments.',
+		description: 'Bali’s Iconic & ridiculous (tourist) moments, turned into real-life photo spots. Strike a pose, have a laugh, and tag your friends. Bali never looked this fun',
 		image: '/img/island-soul-garden.webp',
-		features: [
-			{
-				icon: 'Star',
-				title: 'The Shortcut',
-				description: 'Fun for the entire family'
-			},
-			{
-				icon: 'Star',
-				title: 'The Detox Diva',
-				description: 'UBUDians in Full Zen Mode'
-			},
-			{
-				icon: 'Star',
-				title: 'The Canggu Gladiator',
-				description: 'Six-Pack, Selfie, Sprint'
-			},
-			{
-				icon: 'Star',
-				title: 'The Real MVP',
-				description: 'Super-Gojek to the Rescue'
-			}
-		]
+		features: []
 	},
 	{
 		id: 'b',
@@ -181,9 +160,7 @@ const aboutSlides: AboutSlide[] = [
 		badgeColor: 'red',
 		title: 'Island Food Market',
 		description:
-			'A curated culinary experience for global tastes.<br/><br/>' +
-			'Island Food Market will feature 20 handpicked food & drink stalls, offering a delightful mix of tropical flavors, local bites, and international comfort food.\n\nEach tenant is carefully curated to reflect Bali’s vibrant culinary scene, ranging from smoothie bowls and seafood skewers to fusion snacks and plant-based treats.<br/><br />' +
-			'The entire market is designed to evoke the laid-back vibe of Bali’s Sunday markets, blending bohemian picnic setups, palm-lined walkways, and live DJ/acoustic sessions during the day.',
+			'Island Food Market brings you 20 handpicked stalls serving up tropical bites, local faves, and global comfort food. Think smoothie bowls, seafood skewers, fusion snacks, and plant-based treats — all showing off Bali’s tasty side. Kick back in boho picnic spots, wander palm-lined paths, and vibe to live DJs or acoustic sets. It’s your perfect Bali Sunday, any day!',
 		image: '/img/island-food-market.webp',
 		features: []
 	},
@@ -192,31 +169,9 @@ const aboutSlides: AboutSlide[] = [
 		badge: 'Additional Fest',
 		badgeColor: 'orange',
 		title: 'Local Makers Market',
-		description:
-			'A vibrant space celebrating <b>Bali’s creative spirit</b>, where local artisans, indie brands, and conscious creators come together. This curated market features handcrafted goods, slow fashion, eco-friendly souvenirs, and unique art pieces that reflect the island’s soul. Perfect for visitors looking for meaningful keepsakes, stylish finds, or a chance to meet the makers behind the products.',
+		description: 'Bali’s buzzing with creativity at Local Makers Market, stroll through colorful stalls, try on slow fashion and eco-friendly treasure you won’t find anywhere else. Take home a little piece of Bali’s magic!',
 		image: '/img/local-makers-market.webp',
-		features: [
-			{
-				icon: 'Star',
-				title: 'Handmade jewelry & accessories'
-			},
-			{
-				icon: 'Star',
-				title: 'Natural body care & wellness products'
-			},
-			{
-				icon: 'Star',
-				title: 'Bali-inspired fashion & textiles'
-			},
-			{
-				icon: 'Star',
-				title: 'Art prints, ceramics & home décor'
-			},
-			{
-				icon: 'Star',
-				title: 'Upcycled & sustainable goods'
-			}
-		]
+		features: []
 	},
 	{
 		id: 'd',
@@ -224,8 +179,9 @@ const aboutSlides: AboutSlide[] = [
 		badgeColor: 'pink',
 		title: 'Live Acoustic & DJ Sessions',
 		description:
-			'Throughout the day, enjoy soothing acoustic performances under the shade of palm trees, perfect for a lazy picnic or a breezy afternoon chill. As the sun sets, the energy shifts with sunset DJ sessions, featuring tropical house, disco grooves, and laid-back island beats to keep the festival spirit alive into the evening.<br/><br />' +
-			'Whether you\'re dancing barefoot on the grass or relaxing with a cold drink, our music lineup is designed to complement the island breeze and festival glow.',
+			'Ease into the day with mellow melodies under the trees.<br/>' +
+			'As the sun dips, tropical house and disco grooves light up the night.<br/><br/>' +
+			'From barefoot dancing to beachside chill, the vibe is always on',
 		image: '/img/live-acoustic-dj-session.webp',
 		features: []
 	},
@@ -233,11 +189,8 @@ const aboutSlides: AboutSlide[] = [
 		id: 'e',
 		badge: 'Additional Fest',
 		badgeColor: 'purple',
-		title: 'Sky Signal',
-		description:
-			'Every weekend during The Big Bounce Bali, we launch a series of giant kites from the Peninsula, floating high above Nusa Dua Bay.<br/><br />' +
-			'<b>Every Saturday & Sunday – 10:00 AM</b><br/>' +
-			'Launched from the open hill of Peninsula Island Best viewed from: coastal patchwalk, bay-side hotels, and boat traffic',
+		title: 'Kite Festival',
+		description: 'Every weekend at The Big Bounce Bali, giant kites take to the sky from Peninsula Island, drifting high above Nusa Dua Bay. Catch them every Saturday and Sunday at 10 AM, best views from the coastal path, bay-side hotels, or out on the water!',
 		image: '/img/sky-signal.webp',
 		features: []
 	}
