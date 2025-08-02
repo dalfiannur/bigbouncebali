@@ -29,7 +29,15 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 						<Dialog key={attraction.id}>
 							<DialogTrigger asChild>
 								<Card
-									className={cn(`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg h-[350px]`, `border-${attraction.color}-200`, `hover:border-${attraction.color}-400`)}
+									data-type={attraction.id}
+									className={cn(
+										`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg h-[350px]`,
+										`data-[type=octoblast]:border-green-800/20 data-[type=octoblast]:hover:border-green-800`,
+										`data-[type=bounce-house]:border-red-500/20 data-[type=bounce-house]hover::border-red-500`,
+										`data-[type=the-giant]:border-orange-500/20 data-[type=the-giant]:hover:border-orange-500`,
+										`data-[type=airspace-pink]:border-pink-500/20 data-[type=airspace-pink]:hover:border-pink-500`,
+										`data-[type=sport-slam]:border-purple-500/20 data-[type=sport-slam]:hover:border-purple-500`
+									)}
 								>
 									<div className="px-6 flex flex-col h-full">
 										<Image
@@ -150,7 +158,7 @@ export const AttractionSection = ({items}: { items: Attraction[] }) => {
 											`data-[type=bounce-house]:from-red-500 data-[type=bounce-house]:to-red-600 data-[type=bounce-house]:hover:from-red-600 data-[type=bounce-house]:hover:to-red-700`,
 											`data-[type=the-giant]:from-orange-500 data-[type=the-giant]:to-orange-600 data-[type=the-giant]:hover:from-orange-600 data-[type=the-giant]:hover:to-orange-700`,
 											`data-[type=airspace-pink]:from-pink-500 data-[type=airspace-pink]:to-pink-600 data-[type=airspace-pink]:hover:from-pink-600 data-[type=airspace-pink]:hover:to-pink-700`,
-											`data-[type=sport-slam]:from-purple-500 data-[type=sport-slam]:to-purple-600 data-[type=sport-slam]:hover:from-purple-600 data-[type=sport-slam]:hover:to-purple-700`,
+											`data-[type=sport-slam]:from-purple-500 data-[type=sport-slam]:to-purple-600 data-[type=sport-slam]:hover:from-purple-600 data-[type=sport-slam]:hover:to-purple-700`
 										)}
 									>
 										Get Ticket Now
