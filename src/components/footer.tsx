@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const Footer = () => {
 	return (
 		<footer
-			className="flex flex-col mb-14 p-6 bg-gradient-to-r from-orange-500 to-pink-500">
+			className="flex flex-col mb-14 md:mb-0 p-6">
 			<div className="flex justify-center items-center gap-6 ">
 				<Link href="/">
 					<SiInstagram className="text-white hover:text-white" size="2em" title="Instagram" />

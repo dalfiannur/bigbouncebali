@@ -81,11 +81,13 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 					<TicketSection/>
 					<AboutSection items={aboutSlides}/>
 					<AttractionSection/>
-					<CTASection/>
 				</main>
-				<Footer/>
-				<FloatingCTA/>
-				<FloatingCTAMobile/>
+				<div className="bg-gradient-to-t from-green-800 to-green-700">
+					<CTASection/>
+					<Footer/>
+					<FloatingCTA/>
+					<FloatingCTAMobile/>
+				</div>
 			</div>
 		</>
 	)
