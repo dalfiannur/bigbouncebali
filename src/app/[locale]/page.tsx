@@ -20,7 +20,7 @@ const attractions: Attraction[] = [
 	{
 		id: 'octoblast',
 		title: 'Octoblast',
-		shortDescription: 'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. In Bali, near the sea breeze. Octo wants you to jump.',
+		shortDescription: 'For ocean lovers who’d dive into anything. Bounce like a jellyfish and get soaked in our all-day foam party.',
 		fullDescription:
 			'A purple octopus fantasyland with tangled tentacles, water splashes, and climb zones. Great for families & playful adults. In Bali, set near the sea breeze. Octo wants you to jump.',
 		image: '/img/octoblast.webp',
@@ -45,7 +45,7 @@ const attractions: Attraction[] = [
 	{
 		id: 'bounce-house',
 		title: 'The World’s Biggest Bounce House',
-		shortDescription: 'The heart of the experience – the world’s largest inflatable. Endless jumps, ball pits, confetti blasts, and live DJs in Bali.',
+		shortDescription: 'Where the music hits and the floor moves with you. Live DJs, confetti storms, and sunset silent bounce sessions',
 		fullDescription:
 			'The heart of the experience – the world’s largest inflatable. Endless jumps, ball pits, confetti blasts, and live DJ sets. In Bali, this turns into a vibrant bounce-temple with island lights & sounds. It’s chaos – the fun kind.',
 		image: '/img/the-worlds-biggest-bounce-house.webp',
@@ -70,7 +70,7 @@ const attractions: Attraction[] = [
 	{
 		id: 'the-giant',
 		title: 'The Giant',
-		shortDescription: 'A 300m+ inflatable obstacle race with slides, towers, and tunnels. Compete, race the clock, or just survive. Ready for The Giant Challenge?',
+		shortDescription: 'Try surviving 300 meters of inflatable madness. it’s fun until it humbles you.',
 		fullDescription:
 			'A 300m+ inflatable obstacle race packed with slides, towers, and tunnels. Compete with friends, beat the clock, or just survive the bounce. Are you ready for The Giant Challenge?',
 		image: '/img/the-giant.webp',
@@ -95,7 +95,7 @@ const attractions: Attraction[] = [
 	{
 		id: 'airspace-pink',
 		title: 'Airspace Pink',
-		shortDescription: 'A cosmic bounce chamber glowing at night with inflatable creatures, soft mazes, and neon bounce. Alien-approved fun.',
+		shortDescription: 'For grown-ups who still secretly love ball pits. Glowing, surreal, and strangely satisfying.',
 		fullDescription:
 			'A cosmic bounce chamber glowing at night – complete with inflatable creatures, soft mazes, and neon bounce. After dark, it glows like another planet. Alien-approved fun.',
 		image: '/img/airspace-pink-air.webp',
@@ -120,7 +120,7 @@ const attractions: Attraction[] = [
 	{
 		id: 'sport-slam',
 		title: 'Sport Slam',
-		shortDescription: 'Bounce-based sports arena for slam dunks, dodgeball, and relay races. In Bali, enjoy sunset beach tournaments.',
+		shortDescription: 'For the ones who never skip leg day,  even at a festival. Bounce, battle, and brag with your crew in this inflatable arena.',
 		fullDescription:
 			'Bounce-based sports arena for slam dunks, dodgeball, and relay races. In Bali, expect sunset beach tournaments. Where bounce meets beach sports.',
 		image: '/img/sport-slam.webp',
