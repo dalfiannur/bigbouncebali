@@ -75,9 +75,7 @@ export const TicketSection = () => {
 	
 	return (
 		<section id="tickets" className="w-full py-12 md:py-24 lg:py-32 flex justify-center relative">
-			<div
-				className="absolute top-0 right-0 z-10 left-0 min-h-36 bg-[url(/img/tickets-foreground.webp)] bg-no-repeat bg-cover aspect-[12/5]"></div>
-			<div className="container px-4 md:px-6 z-20 pt-72">
+			<div className="container px-4 md:px-6 z-20">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<h3 className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-wider', fonts.beachday.className)}>
 						Choose Your Adventure
