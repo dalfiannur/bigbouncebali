@@ -92,7 +92,7 @@ export const TicketSection = () => {
 						<Card key={ticket.id}
 							  data-type={ticket.id}
 							  className={cn(
-								  'border-2 transition-colors bg-white/40 h-[365px] flex flex-col',
+								  'border-2 transition-colors bg-white/40 h-auto md:h-[365px] flex flex-col gap-2',
 								  'data-[type=a]:hover:border-green-800',
 								  'data-[type=b]:hover:border-red-500',
 								  'data-[type=c]:hover:border-orange-500',
@@ -102,14 +102,14 @@ export const TicketSection = () => {
 						>
 							<CardHeader>
 								<Badge data-type={ticket.type}
-									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize"
+									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize text-xs"
 								>
-									{ticket.type === 'all' ? 'All' : ticket.type === 'domestic' ? 'Domestic & KITAS' : 'Foreign'}
+									{ticket.type === 'all' ? 'All' : ticket.type === 'domestic' ? 'Indonesian Citizens & KITAS Holders' : 'International Tourist'}
 								</Badge>
 								<CardTitle
 									data-type={ticket.id}
 									className={cn(
-										'text-center mt-2',
+										'text-center text-sm',
 										'data-[type=a]:text-green-800',
 										'data-[type=b]:text-red-500',
 										'data-[type=c]:text-orange-500',
@@ -119,12 +119,12 @@ export const TicketSection = () => {
 								>
 									{ticket.title}
 								</CardTitle>
-								<div className="mt-3 text-center">
+								<div className="text-center">
 									<span
 										data-type={ticket.id}
 										className={
 											cn(
-												'text-3xl font-bold',
+												'text-xl font-bold',
 												'data-[type=a]:text-green-800',
 												'data-[type=b]:text-red-500',
 												'data-[type=c]:text-orange-500',
@@ -139,7 +139,7 @@ export const TicketSection = () => {
 								</div>
 							</CardHeader>
 							<CardContent className="flex-1 flex flex-col justify-between">
-								<ul className="space-y-2 text-sm">
+								<ul className="space-y-1 grid grid-cols-2 text-sm">
 									{ticket.features.map((feature, index) => (
 										<li key={index} className="flex items-center">
 											<span className="w-2 h-2 bg-[#1c5129] rounded-full mr-2"></span>
@@ -151,7 +151,7 @@ export const TicketSection = () => {
 									data-type={ticket.id}
 									className={
 										cn(
-											'w-full',
+											'mt-2 w-full',
 											'data-[type=a]:bg-green-800',
 											'data-[type=b]:bg-red-500',
 											'data-[type=c]:bg-orange-500',
