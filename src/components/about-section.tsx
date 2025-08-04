@@ -117,8 +117,8 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 						{items.map((_, index) => (
 							<button
 								key={index}
-								className={`w-3 h-3 rounded-full transition-all duration-300 ${
-									index === currentSlide ? 'bg-orange-500 scale-125' : 'bg-gray-300 hover:bg-gray-400'
+								className={`w-3 h-3 rounded-full transition-all duration-300 border ${
+									index === currentSlide ? 'bg-orange-500 scale-125 border-white' : 'bg-transparent hover:bg-gray-400 border-orange-500'
 								}`}
 								onClick={() => goToSlide(index)}
 							/>
