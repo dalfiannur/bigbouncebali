@@ -8,7 +8,7 @@ import {Metadata} from 'next'
 
 export const metadata: Metadata = {
 	title: 'Big Bounce Bali',
-	description: 'The Big Bounce Bali',
+	description: 'The Big Bounce Bali'
 }
 
 export default async function LocaleLayout({children, params}: {
@@ -25,7 +25,7 @@ export default async function LocaleLayout({children, params}: {
 	
 	return (
 		<html lang={locale}>
-		<body>
+		<body className="min-h-screen relative bg-gradient-to-b from-[#2196CC] to-orange-100">
 		<NextIntlClientProvider>{children}</NextIntlClientProvider>
 		</body>
 		</html>
