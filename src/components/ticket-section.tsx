@@ -75,18 +75,18 @@ const tickets = [
 
 export const TicketSection = () => {
 	return (
-		<section id="tickets" className="w-full overflow-hidden py-12 md:py-24 lg:py-32 flex justify-center relative">
+		<section id="tickets" className="w-full overflow-hidden flex justify-center relative">
 			<div className="container px-4 md:px-6 z-20">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<motion.h3 initial={{y: 100}}
 							   whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut'}}}
-							   className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-wider', fonts.beachday.className)}
+							   className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-widest', fonts.beachday.className)}
 					>
 						Pick Your Pass
 					</motion.h3>
 					<motion.p initial={{y: 80}}
 							  whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut', delay: 0.1}}}
-							  className="max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							  className="text-white max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 						Each ticket includes a 50K F&B voucher, redeemable at selected tenants.
 					</motion.p>
 				</div>
@@ -98,7 +98,7 @@ export const TicketSection = () => {
 									whileInView={{x: 0, transition: {duration: 0.5, ease: 'easeInOut'}}}
 									exit={{x: index % 2 != 1 ? -40 : 40}}
 									className={cn(
-										'border-2 transition-colors bg-white/40 h-auto md:h-[365px] flex flex-col gap-2 py-8 px-2 rounded-xl',
+										'border-2 transition-colors bg-white/40 h-auto md:h-[365px] flex flex-col gap-2 py-6 rounded-xl',
 										'data-[type=a]:hover:border-green-800',
 										'data-[type=b]:hover:border-red-500',
 										'data-[type=c]:hover:border-orange-500',
@@ -108,14 +108,14 @@ export const TicketSection = () => {
 						>
 							<CardHeader>
 								<Badge data-type={ticket.type}
-									   className="data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize text-xs"
+									   className="-mt-9 -ml-4 data-[type=domestic]:bg-blue-100 data-[type=domestic]:text-blue-700 data-[type=foreign]:bg-pink-100 data-[type=foreign]:text-pink-500 w-fit capitalize text-xs"
 								>
 									{ticket.type === 'all' ? 'All' : ticket.type === 'domestic' ? 'Indonesian Citizens & KITAS Holders' : 'International Tourist'}
 								</Badge>
 								<CardTitle
 									data-type={ticket.id}
 									className={cn(
-										'text-center text-sm',
+										'-mt-2 text-center text-sm',
 										'data-[type=a]:text-green-800',
 										'data-[type=b]:text-red-500',
 										'data-[type=c]:text-orange-500',
@@ -130,12 +130,12 @@ export const TicketSection = () => {
 										data-type={ticket.id}
 										className={
 											cn(
-												'text-xl font-bold',
+												'text-2xl font-bold',
 												'data-[type=a]:text-green-800',
 												'data-[type=b]:text-red-500',
 												'data-[type=c]:text-orange-500',
 												'data-[type=d]:text-pink-500',
-												'data-[type=d]:text-purple-500'
+												'data-[type=e]:text-purple-500'
 											)
 										}
 									>
@@ -145,10 +145,19 @@ export const TicketSection = () => {
 								</div>
 							</CardHeader>
 							<CardContent className="flex-1 flex flex-col justify-between">
-								<ul className="space-y-1 grid grid-cols-2 text-sm">
+								<ul className="space-y-1 grid grid-cols-2 text-xs">
 									{ticket.features.map((feature, index) => (
 										<li key={index} className="flex items-center">
-											<span className="w-2 h-2 bg-[#1c5129] rounded-full mr-2"></span>
+											<span data-type={ticket.id}
+												  className={cn(
+													  'w-2 h-2 rounded-full mr-2',
+													  'data-[type=a]:bg-green-800',
+													  'data-[type=b]:bg-red-500',
+													  'data-[type=c]:bg-orange-500',
+													  'data-[type=d]:bg-pink-500',
+													  'data-[type=e]:bg-purple-500'
+												  )}
+											></span>
 											{feature}
 										</li>
 									))}
