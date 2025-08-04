@@ -170,7 +170,7 @@ export const AttractionSection = () => {
 								<Card
 									data-type={attraction.id}
 									className={cn(
-										`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg h-[350px]`,
+										`border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg h-auto md:h-[350px]`,
 										`data-[type=octoblast]:border-green-800/20 data-[type=octoblast]:hover:border-green-800`,
 										`data-[type=bounce-house]:border-red-500/20 data-[type=bounce-house]hover::border-red-500`,
 										`data-[type=the-giant]:border-orange-500/20 data-[type=the-giant]:hover:border-orange-500`,
