@@ -1,5 +1,5 @@
 import {Attraction} from '@/types/attraction'
-import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/components/ui/dialog'
+import {Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/components/ui/dialog'
 import {Card, CardDescription, CardTitle} from './ui/card'
 import Image from 'next/image'
 import {Button} from './ui/button'
@@ -235,20 +235,22 @@ export const AttractionSection = () => {
 								
 								{/* CTA Button */}
 								<div className="mt-6 flex justify-center">
-									<Button
-										size="lg"
-										data-type={attraction.id}
-										className={cn(
-											`bg-gradient-to-r text-white px-8 py-3 cursor-pointer`,
-											`data-[type=octoblast]:from-green-800 data-[type=octoblast]:to-green-900 data-[type=octoblast]:hover:from-green-900 data-[type=octoblast]:hover:to-green-950`,
-											`data-[type=bounce-house]:from-red-500 data-[type=bounce-house]:to-red-600 data-[type=bounce-house]:hover:from-red-600 data-[type=bounce-house]:hover:to-red-700`,
-											`data-[type=the-giant]:from-orange-500 data-[type=the-giant]:to-orange-600 data-[type=the-giant]:hover:from-orange-600 data-[type=the-giant]:hover:to-orange-700`,
-											`data-[type=airspace-pink]:from-pink-500 data-[type=airspace-pink]:to-pink-600 data-[type=airspace-pink]:hover:from-pink-600 data-[type=airspace-pink]:hover:to-pink-700`,
-											`data-[type=sport-slam]:from-purple-500 data-[type=sport-slam]:to-purple-600 data-[type=sport-slam]:hover:from-purple-600 data-[type=sport-slam]:hover:to-purple-700`
-										)}
-									>
-										Get Ticket Now
-									</Button>
+									<DialogClose asChild>
+										<Button
+											size="lg"
+											data-type={attraction.id}
+											className={cn(
+												`bg-gradient-to-r text-white px-8 py-3 cursor-pointer`,
+												`data-[type=octoblast]:from-green-800 data-[type=octoblast]:to-green-900 data-[type=octoblast]:hover:from-green-900 data-[type=octoblast]:hover:to-green-950`,
+												`data-[type=bounce-house]:from-red-500 data-[type=bounce-house]:to-red-600 data-[type=bounce-house]:hover:from-red-600 data-[type=bounce-house]:hover:to-red-700`,
+												`data-[type=the-giant]:from-orange-500 data-[type=the-giant]:to-orange-600 data-[type=the-giant]:hover:from-orange-600 data-[type=the-giant]:hover:to-orange-700`,
+												`data-[type=airspace-pink]:from-pink-500 data-[type=airspace-pink]:to-pink-600 data-[type=airspace-pink]:hover:from-pink-600 data-[type=airspace-pink]:hover:to-pink-700`,
+												`data-[type=sport-slam]:from-purple-500 data-[type=sport-slam]:to-purple-600 data-[type=sport-slam]:hover:from-purple-600 data-[type=sport-slam]:hover:to-purple-700`
+											)}
+										>
+											Close
+										</Button>
+									</DialogClose>
 								</div>
 							</DialogContent>
 						</Dialog>
