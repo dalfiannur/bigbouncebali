@@ -5,7 +5,7 @@ import {AboutSlide} from '@/types/about-slide'
 import {AboutSection} from '@/components/about-section'
 import {HeroSection} from '@/components/hero-section'
 import {TicketSection} from '@/components/ticket-section'
-import {AttractionSection} from '@/components/attraction-section'
+import {AdditionalFestSection} from '@/components/additional-fest-section'
 import {Footer} from '@/components/footer'
 import {FloatingCTA, FloatingCTAMobile} from '@/components/floating-cta'
 import {CTASection} from '@/components/cta-section'
@@ -80,7 +80,7 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 					<HeroSection/>
 					<TicketSection/>
 					<AboutSection items={aboutSlides}/>
-					<AttractionSection/>
+					<AdditionalFestSection/>
 					<CTASection/>
 				</main>
 				<div>
