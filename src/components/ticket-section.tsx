@@ -77,18 +77,18 @@ export const TicketSection = () => {
 	return (
 		<section id="tickets" className="w-full overflow-hidden flex justify-center relative">
 			<div className="container px-4 md:px-6 z-20">
-				<div className="flex flex-col items-center justify-center space-y-4 text-center">
+				<div className="flex flex-col items-center justify-center text-center">
 					<motion.h3 initial={{y: 100}}
 							   whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut'}}}
-							   className={cn('text-4xl md:text-7xl font-bold text-orange-400 tracking-widest', fonts.beachday.className)}
+							   className={cn('text-white uppercase')}
 					>
-						Pick Your Pass
+						First things first
 					</motion.h3>
-					<motion.p initial={{y: 80}}
+					<motion.h2 initial={{y: 80}}
 							  whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut', delay: 0.1}}}
-							  className="text-white max-w-[900px] text-black-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-						Each ticket includes a 50K F&B voucher, redeemable at selected tenants.
-					</motion.p>
+							  className={cn('max-w-[900px] text-orange-400 tracking-widest text-4xl', fonts.beachday.className)}>
+						Get your ticket
+					</motion.h2>
 				</div>
 				<div className="mx-auto grid max-w-7xl items-center gap-6 py-12 lg:grid-cols-2 xl:grid-cols-5">
 					{tickets.map((ticket, index) => (
@@ -98,7 +98,7 @@ export const TicketSection = () => {
 									whileInView={{x: 0, transition: {duration: 0.5, ease: 'easeInOut'}}}
 									exit={{x: index % 2 != 1 ? -40 : 40}}
 									className={cn(
-										'border-2 transition-colors bg-white/40 h-auto md:h-[365px] flex flex-col gap-2 py-6 rounded-xl',
+										'border-2 transition-colors bg-white/40 h-auto flex flex-col gap-2 py-6 rounded-xl',
 										'data-[type=a]:hover:border-green-800',
 										'data-[type=b]:hover:border-red-500',
 										'data-[type=c]:hover:border-orange-500',
