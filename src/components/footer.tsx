@@ -5,7 +5,7 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/co
 export const Footer = () => {
 	return (
 		<footer
-			className="flex flex-col mb-14 md:mb-0 p-6 bg-orange-500 text-white">
+			className="flex flex-col mb-14 md:mb-0 p-6 bg-yellow-400 text-white">
 			<Accordion type="single" collapsible>
 				<AccordionItem value="stay-tuned">
 					<AccordionTrigger className="font-extrabold text-xl">Stay Tuned</AccordionTrigger>
@@ -22,17 +22,23 @@ export const Footer = () => {
 				<AccordionItem value="information">
 					<AccordionTrigger className="font-extrabold text-xl">Information</AccordionTrigger>
 					<AccordionContent className="flex flex-col gap-4 text-balance font-semibold">
-						<Link href="/" className="underline underline-offset-4 ">
+						<Link href="/faqs" className="underline underline-offset-4 ">
 							FAQs
 						</Link>
-						<Link href="/" className="underline underline-offset-4 ">
-							Terms of Service
+						<Link href="/safety" className="underline underline-offset-4 ">
+							Safety Guidelines
 						</Link>
-						<Link href="/" className="underline underline-offset-4 ">
+						<Link href="/privacy" className="underline underline-offset-4 ">
 							Privacy Policy
 						</Link>
-						<Link href="/" className="underline underline-offset-4 ">
+						<Link href="/terms" className="underline underline-offset-4 ">
+							Terms of Service
+						</Link>
+						<Link href="/weather" className="underline underline-offset-4 ">
 							Weather Policy
+						</Link>
+						<Link href="/general-information" className="underline underline-offset-4 ">
+							General Information
 						</Link>
 					</AccordionContent>
 				</AccordionItem>
@@ -40,7 +46,7 @@ export const Footer = () => {
 				<AccordionItem value="get-in-touce">
 					<AccordionTrigger className="text-white font-extrabold text-xl">Get In Touch</AccordionTrigger>
 					<AccordionContent className="flex flex-col gap-4 text-balance white font-semibold">
-						<Link href="/faqs" className="underline underline-offset-4 ">
+						<Link href="/contact-us" className="underline underline-offset-4 ">
 							Contact Us
 						</Link>
 						<Link href="/terms" className="underline underline-offset-4 ">
@@ -58,7 +64,7 @@ export const Footer = () => {
 			<div className="mt-6 flex justify-center items-center">
 				<Image src="/img/magenta.webp" alt="Magenta & Incubase Studio" width={150} height={90}/>
 			</div>
-			<p className="mt-6 text-xs text-center text-white">© {new Date().getFullYear()} The Big Bounce Bali. All
+			<p className="mt-6 text-xs text-center text-white">© {new Date().getFullYear()} <Link href="/">The Big Bounce Bali</Link>. All
 				rights reserved.</p>
 		</footer>
 	)
