@@ -64,8 +64,9 @@ export const Footer = () => {
 			<div className="mt-6 flex justify-center items-center">
 				<Image src="/img/magenta.webp" alt="Magenta & Incubase Studio" width={150} height={90}/>
 			</div>
-			<p className="mt-6 text-xs text-center text-white">© {new Date().getFullYear()} <Link href="/">The Big Bounce Bali</Link>. All
+			<p className="mt-6 text-xs text-center text-white font-semibold">© {new Date().getFullYear()} <Link href="/">The Big Bounce Bali</Link>. All
 				rights reserved.</p>
+			<p className="mt-2 text-xs text-center text-white font-bold">PT. Sakti Rekatama Cipta</p>
 		</footer>
 	)
 }

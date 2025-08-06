@@ -81,7 +81,7 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 					<TicketSection/>
 					<AboutSection items={aboutSlides}/>
 					<AdditionalFestSection/>
-					<CTASection/>
+					{/*<CTASection/>*/}
 				</main>
 				<div>
 					<Footer/>

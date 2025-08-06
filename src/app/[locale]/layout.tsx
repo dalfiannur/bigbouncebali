@@ -25,7 +25,7 @@ export default async function LocaleLayout({children, params}: {
 	
 	return (
 		<html lang={locale}>
-		<body className="min-h-screen relative bg-gradient-to-b from-[#2196CC] to-orange-100">
+		<body className="min-h-screen relative">
 		<NextIntlClientProvider>{children}</NextIntlClientProvider>
 		</body>
 		</html>

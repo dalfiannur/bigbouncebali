@@ -1,4 +1,5 @@
 import localFont from 'next/font/local'
+import { Knewave, Aladin } from 'next/font/google'
 
 const montserrat = localFont({
 	src: [
@@ -25,7 +26,19 @@ const beachday = localFont({
 	src: './beachday.ttf'
 })
 
+const aladin = Aladin({
+	subsets: ["latin"],
+	weight: ["400"]
+})
+
+const knewave = Knewave({
+	subsets: ["latin"],
+	weight: ["400"]
+})
+
 export const fonts = {
 	montserrat,
-	beachday
+	beachday,
+	aladin,
+	knewave
 }
