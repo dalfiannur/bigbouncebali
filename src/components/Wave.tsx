@@ -1,6 +1,6 @@
 'use client'
 
-import {useRef} from 'react'
+// import {useRef} from 'react'
 import {cn} from '@/lib/utils'
 import {fonts} from '@/fonts'
 
@@ -84,7 +84,7 @@ export const Wave = () => {
 				</div>
 				<div className={cn("mt-4 text-[16px] leading-5 tracking-widest", fonts.montserrat.className)}>
 					<div>NO BOUNCE? NO PROBLEM.</div>
-					<div>THERE'S STILL TOO MUCH FUN</div>
+					<div>THERE&aposS STILL TOO MUCH FUN</div>
 				</div>
 			</div>
 		</div>
