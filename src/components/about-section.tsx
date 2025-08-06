@@ -49,7 +49,7 @@ export const AboutSection = ({items}: { items: AboutSlide[] }) => {
 			>
 				{items.map((item, index) => (
 					<SwiperSlide key={index}>
-						<Image src="/img/attractions/1.webp"
+						<Image src={`/img/attractions/${index}.webp`}
 							   alt="Attraction 01"
 							   width={1327}
 							   height={1217}

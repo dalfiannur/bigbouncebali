@@ -75,17 +75,17 @@ export const TicketSection = () => {
 	return (
 		<section id="tickets"
 				 className="w-full overflow-hidden flex justify-center relative bg-[url(/img/bg-bottom.webp)] bg-no-repeat bg-cover bg-bottom">
-			<div className="container px-4 md:px-6 z-20">
+			<div className="mt-4 container px-4 md:px-6 z-20">
 				<div className="flex flex-col items-center justify-center text-center">
 					<motion.h3 initial={{y: 100}}
 							   whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut'}}}
-							   className={cn('text-white uppercase tracking-widest', fonts.beachday.className)}
+							   className={cn('text-white text-xl uppercase tracking-widest [-webkit-text-stroke-width:0.5px] [-webkit-text-stroke-color:orange]', fonts.beachday.className)}
 					>
 						First things first
 					</motion.h3>
 					<motion.h2 initial={{y: 80}}
 							   whileInView={{y: 0, transition: {duration: 0.5, ease: 'easeInOut', delay: 0.1}}}
-							   className={cn('max-w-[900px] text-orange-400 tracking-widest text-4xl [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white]', fonts.beachday.className)}>
+							   className={cn('max-w-[900px] text-orange-400 tracking-wider text-5xl [-webkit-text-stroke-width:2px] [-webkit-text-stroke-color:white]', fonts.beachday.className)}>
 						Get your ticket
 					</motion.h2>
 				</div>
