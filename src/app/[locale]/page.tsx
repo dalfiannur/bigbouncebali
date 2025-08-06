@@ -8,7 +8,7 @@ import {TicketSection} from '@/components/ticket-section'
 import {AdditionalFestSection} from '@/components/additional-fest-section'
 import {Footer} from '@/components/footer'
 import {FloatingCTA, FloatingCTAMobile} from '@/components/floating-cta'
-import {CTASection} from '@/components/cta-section'
+// import {CTASection} from '@/components/cta-section'
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({locale}))
