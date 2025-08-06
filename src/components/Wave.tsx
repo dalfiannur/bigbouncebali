@@ -5,7 +5,7 @@ import {cn} from '@/lib/utils'
 import {fonts} from '@/fonts'
 
 export const Wave = () => {
-	const waveRef = useRef<SVGPathElement>(null)
+	// const waveRef = useRef<SVGPathElement>(null)
 	
 	// useEffect(() => {
 	// 	const width = 400
