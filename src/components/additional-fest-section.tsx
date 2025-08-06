@@ -10,7 +10,7 @@ export const AdditionalFestSection = () => {
 			className="w-full bg-[url(/img/bg-bottom.webp)] bg-cover bg-bottom"
 		>
 			<Wave />
-			<div className="-px-20 pt-20">
+			<div className="-px-20">
 				<div className="overflow-hidden w-full">
 					<div>
 						<div className="flex flex-col items-center text-orange-600">
@@ -29,7 +29,7 @@ export const AdditionalFestSection = () => {
 							<h5 className={cn('text-7xl tracking-widest text-center leading-[0.8]', fonts.beachday.className)}>LOCAL
 								MARKET</h5>
 						</div>
-						<div className="-mt-4 relative w-full aspect-video">
+						<div className="-mt-8 relative w-full aspect-video">
 							<Image src="/img/additional-fest/local-market.webp" alt="Fist" fill
 								   className="object-contain"/>
 						</div>

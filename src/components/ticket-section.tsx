@@ -114,9 +114,10 @@ export const TicketSection = () => {
 								<div className="flex items-center gap-4 justify-between">
 									<div data-type={ticket.type}
 										 className={cn(
-											 'w-fit h-fit font-bold rounded px-3 py-1 text-xs drop-shadow-2xl uppercase text-center',
-											 'bg-blue-300 text-white',
-											 fonts.beachday.className
+											 'w-fit h-fit font-extrabold rounded px-3 py-1 text-xs drop-shadow-2xl uppercase text-center',
+											 'bg-blue-500 text-white',
+											 'data-[type=domestic]:!text-[10px]',
+											 fonts.montserrat.className
 										 )}
 									>
 										{ticket.type === 'all' ? 'All' : ticket.type === 'domestic' ? 'Indonesian Citizens & KITAS Holders' : 'International Tourist'}
@@ -131,7 +132,7 @@ export const TicketSection = () => {
 										data-type={ticket.id}
 										className={
 											cn(
-												'text-[52px]/12 font-bold text-white [-webkit-text-stroke-width:4px] [-webkit-text-stroke-color:black]',
+												'text-[52px]/12 font-bold text-white',
 												fonts.knewave.className
 											)
 										}
@@ -139,7 +140,7 @@ export const TicketSection = () => {
 										{ticket.price}
 									</span>
 									<span
-										className={cn('uppercase text-xl font-bold text-white [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:black]', fonts.knewave.className)}> /{ticket.per}</span>
+										className={cn('uppercase text-xl font-bold text-white', fonts.knewave.className)}> /{ticket.per}</span>
 								</div>
 								<div className="mt-1 flex justify-between items-end">
 									<ul className="flex flex-col text-xs text-white font-semibold">
