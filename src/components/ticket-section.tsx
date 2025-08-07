@@ -7,7 +7,7 @@ const tickets = [
 	{
 		id: 'a',
 		type: 'domestic',
-		title: 'Early Bird',
+		title: 'Bounce Pass',
 		price: 'IDR 75K',
 		per: 'person',
 		features: [
@@ -19,7 +19,7 @@ const tickets = [
 	{
 		id: 'b',
 		type: 'foreign',
-		title: 'Early Bird',
+		title: 'Bounce Pass',
 		price: 'IDR 125K',
 		per: 'person',
 		features: [
