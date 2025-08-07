@@ -30,6 +30,7 @@ export const FloatingCTAMobile = () => {
 			<div className="bg-gradient-to-r from-orange-400 to-orange-500 p-4 shadow-2xl">
 				<Link
 					href="https://happykamper.onelink.me/xqgb/4084is7n"
+					target="_blank"
 					className={cn(buttonVariants({size: 'lg'}), 'w-full bg-white text-orange-600 hover:bg-gray-100 font-bold text-lg py-6 rounded-xl transform hover:scale-105 transition-all duration-300')}
 				>
 					🎟️ Buy Tickets Now
