@@ -1,6 +1,7 @@
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card'
 import Link from 'next/link'
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/accordion'
+import {ArrowBigLeft} from 'lucide-react'
 
 const faqs = {
 	en: [
@@ -298,13 +299,18 @@ export default function FAQsPage() {
 		<div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-pink-50">
 			<main className="flex-1 container px-4 md:px-6 py-8">
 				<div className="max-w-4xl mx-auto">
-					<div className="mb-8">
-						<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-4">
+					<div className="flex items-center justify-between">
+						<Link href="/"
+							  className="bg-red-500 w-10 h-10 flex items-center justify-center rounded-xl text-white">
+							<ArrowBigLeft size={24}/>
+						</Link>
+						<h1
+							className="flex-1 text-center text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
 							FAQs
 						</h1>
 					</div>
 					
-					<div className="space-y-6">
+					<div className="mt-8 space-y-6">
 						{
 							faqs.en.map((faq) => (
 								<Card key={faq.title}>
@@ -328,10 +334,10 @@ export default function FAQsPage() {
 				</div>
 			</main>
 			
-			{/* Footer */}
 			<footer
 				className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white">
-				<p className="text-xs text-gray-500">© {new Date().getFullYear()} <Link href="/">The Big Bounce Bali</Link>. All rights reserved.</p>
+				<p className="text-xs text-gray-500">© {new Date().getFullYear()} <Link href="/">The Big Bounce
+					Bali</Link>. All rights reserved.</p>
 				<nav className="sm:ml-auto flex gap-4 sm:gap-6">
 					<Link href="/terms" className="text-xs hover:underline underline-offset-4 text-gray-500">
 						Terms of Service

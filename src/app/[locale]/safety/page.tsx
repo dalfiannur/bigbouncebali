@@ -1,5 +1,6 @@
 import {Card, CardContent} from '@/components/ui/card'
 import Link from 'next/link'
+import {ArrowBigLeft} from 'lucide-react'
 
 const rules = {
 	en: [
@@ -20,15 +21,24 @@ export default function SafetyPage() {
 		<div className="flex flex-col min-h-screen bg-gradient-to-br from-orange-50 to-pink-50">
 			<main className="flex-1 container px-4 md:px-6 py-8">
 				<div className="max-w-4xl mx-auto">
-					<div className="mb-8">
-						<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-4">
+					<div className="flex items-center justify-between">
+						<Link href="/"
+							  className="bg-red-500 w-10 h-10 flex items-center justify-center rounded-xl text-white">
+							<ArrowBigLeft size={24}/>
+						</Link>
+						<h1
+							className="flex-1 text-center text-4xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
 							Safety Guidelines
 						</h1>
-						<p>Keselamatan adalah prioritas! Harap tetap waspada dan saling jaga dengan sesama bouncer di
-							sekitarmu. Ikuti aturan ini supaya semua bisa bounce dengan aman dan happy:</p>
+					
 					</div>
 					
-					<div className="space-y-6">
+					<p className="mt-8">
+						Keselamatan adalah prioritas! Harap tetap waspada dan saling jaga dengan sesama bouncer di
+						sekitarmu. Ikuti aturan ini supaya semua bisa bounce dengan aman dan happy:
+					</p>
+					
+					<div className="space-y-6 mt-8">
 						<Card>
 							<CardContent className="space-y-4">
 								<ol className="list-decimal list-outside space-y-2 text-gray-700 ml-4">
@@ -45,7 +55,8 @@ export default function SafetyPage() {
 			{/* Footer */}
 			<footer
 				className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white">
-				<p className="text-xs text-gray-500">© {new Date().getFullYear()} <Link href="/">The Big Bounce Bali</Link>. All rights reserved.</p>
+				<p className="text-xs text-gray-500">© {new Date().getFullYear()} <Link href="/">The Big Bounce
+					Bali</Link>. All rights reserved.</p>
 				<nav className="sm:ml-auto flex gap-4 sm:gap-6">
 					<Link href="/terms" className="text-xs hover:underline underline-offset-4 text-gray-500">
 						Terms of Service
@@ -56,7 +67,8 @@ export default function SafetyPage() {
 					<Link href="/safety" className="text-xs hover:underline underline-offset-4 text-gray-500">
 						Safety Guidelines
 					</Link>
-					<Link href="/general-information" className="text-xs hover:underline underline-offset-4 text-gray-500">
+					<Link href="/general-information"
+						  className="text-xs hover:underline underline-offset-4 text-gray-500">
 						General Information
 					</Link>
 				</nav>
