@@ -1,5 +1,3 @@
-'use client'
-
 import {cn} from '@/lib/utils'
 import {fonts} from '@/fonts'
 
@@ -40,12 +38,13 @@ export const Wave = () => {
 					</path>
 				</svg>
 			</div>
-			<div className="relative flex flex-col w-full h-full justify-center items-center z-10 -mt-2 text-center text-white">
-				<div className={cn("text-[34px] leading-7", fonts.beachday.className)}>
+			<div
+				className="relative flex flex-col w-full h-full justify-center items-center z-10 -mt-2 text-center text-white">
+				<div className={cn('text-[34px] leading-7', fonts.beachday.className)}>
 					<div>ONLY GOT</div>
 					<div>AN FESTIVAL PASS?</div>
 				</div>
-				<div className={cn("mt-4 text-[16px] leading-5 tracking-widest", fonts.montserrat.className)}>
+				<div className={cn('mt-4 text-[16px] leading-5 tracking-widest', fonts.montserrat.className)}>
 					<div>NO BOUNCE? NO PROBLEM.</div>
 					<div>THERE&apos;S STILL TOO MUCH FUN</div>
 				</div>
