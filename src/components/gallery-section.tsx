@@ -12,7 +12,7 @@ const items = attractions.map(([attraction, index]) => new Array(index).fill(att
 export const GallerySection = () => (
 	<div className="flex flex-col gap-4 bg-[url(/img/bg-up.webp)] bg-cover bg-no-repeat bg-bottom">
 		<div
-			className={cn('bg-orange-500 w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
+			className={cn('bg-black w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
@@ -40,7 +40,7 @@ export const GallerySection = () => (
 			</Swiper>
 		</div>
 		<div
-			className={cn('bg-orange-500 w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
+			className={cn('bg-black w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
