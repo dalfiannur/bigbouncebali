@@ -1,3 +1,5 @@
+import {Ticket} from 'lucide-react'
+
 export const CTASection = () => {
 	return (
 		<section className="text-black py-12 px-6 text-center w-full bg-[url(/img/bg-bottom.webp)] bg-cover bg-bottom">
@@ -51,8 +53,8 @@ export const CTASection = () => {
 					
 					<a href="https://happykamper.onelink.me/xqgb/4084is7n"
 					   target="_blank"
-					   className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded transition duration-200">
-						🎟️ Book Tickets Now
+					   className="border  flex justify-center items-center gap-5 border-orange-600/20 bg-gradient-to-l from-orange-500 to-orange-400 hover:bg-gradient-to-r  text-white font-bold py-3 px-6 rounded-xl text-lg">
+						<Ticket/> <span>Buy Tickets Now</span>
 					</a>
 				</div>
 			</div>
