@@ -1,6 +1,7 @@
-import {Button, buttonVariants} from '@/components/ui/button'
+import {buttonVariants} from '@/components/ui/button'
 import Link from 'next/link'
 import {cn} from '@/lib/utils'
+import {Ticket} from 'lucide-react'
 
 export const FloatingCTA = () => {
 	return (
@@ -11,14 +12,16 @@ export const FloatingCTA = () => {
 				<div
 					className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse opacity-50"></div>
 				
-				<Button
-					size="lg"
-					className="relative h-20 w-20 bg-white hover:bg-yellow-200  px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg border-4 border-white"
+				<Link
+					href="https://happykamper.onelink.me/xqgb/4084is7n"
+					target="_blank"
+					className="relative block"
 				>
-					<div className="flex flex-col items-center">
-						<span className="text-5xl font-normal">🎟️</span>
+					<div
+						className={cn('flex justify-center items-center w-20 h-20 bg-white hover:bg-yellow-200 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg border-4 border-white')}>
+						<Ticket width={40} height={40} className="block text-orange-600 !w-10 !h-10"/>
 					</div>
-				</Button>
+				</Link>
 			</div>
 		</div>
 	)
