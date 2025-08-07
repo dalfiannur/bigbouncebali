@@ -15,7 +15,7 @@ export const AdditionalFestSection = () => {
 					<div>
 						<div className="flex flex-col items-center text-orange-600">
 							<h5 className={cn('text-7xl tracking-widest', fonts.beachday.className)}>PICNIC?</h5>
-							<h5 className={cn('-mt-2 text-xl text-center font-bold tracking-widest ', fonts.beachday.className)}>Mat’s
+							<h5 className={cn('-mt-2 text-xl text-center font-bold tracking-widest ', fonts.beachday.className)}>Mat&apos;s
 								on you or buy one like a tourist.</h5>
 						</div>
 						<div className="-mt-12 relative w-full aspect-video">
