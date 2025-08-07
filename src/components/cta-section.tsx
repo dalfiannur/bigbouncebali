@@ -44,10 +44,10 @@ export const CTASection = () => {
 				</div>
 				
 				<div className="space-y-4 flex flex-col items-center">
-					<p className="text-lg font-bold">🛵 Ride with Gojek</p>
-					<p className="text-lg w-fit px-4 py-2">Use promo code <span
-						className="bg-white text-green-600 font-black rounded-xl px-3 py-1">GOBOUNCE</span>
-					</p>
+					{/*<p className="text-lg font-bold">🛵 Ride with Gojek</p>*/}
+					{/*<p className="text-lg w-fit px-4 py-2">Use promo code <span*/}
+					{/*	className="bg-white text-green-600 font-black rounded-xl px-3 py-1">GOBOUNCE</span>*/}
+					{/*</p>*/}
 					
 					<a href="https://happykamper.onelink.me/xqgb/4084is7n"
 					   target="_blank"
