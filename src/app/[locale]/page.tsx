@@ -8,7 +8,8 @@ import {TicketSection} from '@/components/ticket-section'
 import {AdditionalFestSection} from '@/components/additional-fest-section'
 import {Footer} from '@/components/footer'
 import {FloatingCTA, FloatingCTAMobile} from '@/components/floating-cta'
-// import {CTASection} from '@/components/cta-section'
+import {CTASection} from '@/components/cta-section'
+import {GallerySection} from '@/components/gallery-section'
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({locale}))
@@ -81,7 +82,8 @@ export default function HomePage({params}: { params: Promise<Record<string, stri
 					<TicketSection/>
 					<AboutSection items={aboutSlides}/>
 					<AdditionalFestSection/>
-					{/*<CTASection/>*/}
+					<GallerySection />
+					<CTASection/>
 				</main>
 				<div>
 					<Footer/>
