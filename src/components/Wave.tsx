@@ -5,42 +5,6 @@ import {cn} from '@/lib/utils'
 import {fonts} from '@/fonts'
 
 export const Wave = () => {
-	// const waveRef = useRef<SVGPathElement>(null)
-	
-	// useEffect(() => {
-	// 	const width = 400
-	// 	const height = 400
-	// 	const waveHeight = 50
-	// 	const waveSpeed = 0.05
-	// 	const waveFrequency = 0.01
-	//
-	// 	if (!waveRef.current) return
-	//
-	//
-	// 	const wave = (time: number) => {
-	// 		let path = 'M 0 ' + height / 2
-	// 		for (let x = 0; x <= width; x++) {
-	// 			const y = Math.sin(x * waveFrequency + time) * waveHeight + height / 2
-	// 			path += ` L ${x} ${y}`
-	// 		}
-	// 		path += ` L ${width} ${height} L 0 ${height} Z`
-	//
-	// 		if (!waveRef.current) return
-	// 		waveRef.current.setAttribute('d', path)
-	// 	}
-	//
-	// 	// Animation loop
-	// 	let time = 0
-	//
-	// 	function animate() {
-	// 		wave(time)
-	// 		time += waveSpeed
-	// 		requestAnimationFrame(animate)
-	// 	}
-	//
-	// 	animate()
-	// }, [])
-	
 	return (
 		<div className="w-full overflow-hidden relative h-[260px]">
 			<div className="absolute -top-20 -left-[18%] w-[120%] h-[220px] overflow-hidden">
@@ -84,7 +48,7 @@ export const Wave = () => {
 				</div>
 				<div className={cn("mt-4 text-[16px] leading-5 tracking-widest", fonts.montserrat.className)}>
 					<div>NO BOUNCE? NO PROBLEM.</div>
-					<div>THERE&aposS STILL TOO MUCH FUN</div>
+					<div>THERE&apos;S STILL TOO MUCH FUN</div>
 				</div>
 			</div>
 		</div>
