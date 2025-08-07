@@ -1,4 +1,6 @@
-import {Button} from '@/components/ui/button'
+import {Button, buttonVariants} from '@/components/ui/button'
+import Link from 'next/link'
+import {cn} from '@/lib/utils'
 
 export const FloatingCTA = () => {
 	return (
@@ -26,12 +28,12 @@ export const FloatingCTAMobile = () => {
 	return (
 		<div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
 			<div className="bg-gradient-to-r from-orange-400 to-orange-500 p-4 shadow-2xl">
-				<Button
-					size="lg"
-					className="w-full bg-white text-orange-600 hover:bg-gray-100 font-bold text-lg py-4 rounded-xl transform hover:scale-105 transition-all duration-300"
+				<Link
+					href="https://happykamper.onelink.me/xqgb/4084is7n"
+					className={cn(buttonVariants({size: 'lg'}), 'w-full bg-white text-orange-600 hover:bg-gray-100 font-bold text-lg py-6 rounded-xl transform hover:scale-105 transition-all duration-300')}
 				>
 					🎟️ Buy Tickets Now
-				</Button>
+				</Link>
 			</div>
 		</div>
 	)
