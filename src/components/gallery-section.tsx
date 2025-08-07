@@ -4,7 +4,6 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import Image from 'next/image'
 import {Autoplay} from 'swiper/modules'
 import {cn} from '@/lib/utils'
-import {fonts} from '@/fonts'
 
 const attractions = [['airspace-pink', 5], ['bounce-house', 11], ['octoblast', 9], ['sport-slam', 7], ['the-giant', 6]]
 const items = attractions.map(([attraction, index]) => new Array(index).fill(attraction).map((a, i) => '/img/attractions/' + a + `/${i + 1}.webp`)).flat()
@@ -12,7 +11,7 @@ const items = attractions.map(([attraction, index]) => new Array(index).fill(att
 export const GallerySection = () => (
 	<div className="flex flex-col gap-4 bg-[url(/img/bg-up.webp)] bg-cover bg-no-repeat bg-bottom">
 		<div
-			className={cn('bg-black w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
+			className={cn('bg-black uppercase w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap')}>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
@@ -40,7 +39,7 @@ export const GallerySection = () => (
 			</Swiper>
 		</div>
 		<div
-			className={cn('bg-black w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap', fonts.beachday.className)}>
+			className={cn('bg-black w-fit uppercase flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap')}>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
 			<span>Gallery -</span>
