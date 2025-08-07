@@ -6,69 +6,93 @@ import Image from 'next/image'
 const tickets = [
 	{
 		id: 'a',
-		type: 'all',
-		title: 'Festival Pass',
-		price: 'IDR 50K',
+		type: 'domestic',
+		title: 'Early Bird',
+		price: 'IDR 75K',
 		per: 'person',
 		features: [
 			'1 pax entry',
-			'50K F&B voucher',
-			'No bounce access',
-			'Full-day session'
+			'Unlimited bounce',
+			'Full-day session',
 		]
 	},
 	{
 		id: 'b',
-		type: 'domestic',
-		title: 'Bounce Pass',
-		price: 'IDR 150K',
+		type: 'foreign',
+		title: 'Early Bird',
+		price: 'IDR 125K',
 		per: 'person',
 		features: [
 			'1 pax entry',
-			'50K F&B voucher',
 			'Unlimited bounce',
-			'Full-day session'
-		]
-	},
-	{
-		id: 'c',
-		type: 'foreign',
-		title: 'Bounce Pass',
-		price: 'IDR 250K',
-		per: 'person',
-		features: [
-			'1 pax entry',
-			'50K F&B voucher',
-			'Unlimited bounce',
-			'Full-day session'
-		]
-	},
-	{
-		id: 'd',
-		type: 'domestic',
-		title: '4 Bounce Pass',
-		price: 'IDR 480K',
-		per: '4 pax',
-		features: [
-			'4 pax entry',
-			'4x 50K F&B voucher',
-			'Unlimited bounce',
-			'Full-day session'
-		]
-	},
-	{
-		id: 'e',
-		type: 'foreign',
-		title: '4 Bounce Pass',
-		price: 'IDR 800K',
-		per: '4 pax',
-		features: [
-			'4 pax entry',
-			'4x 50K F&B voucher',
-			'Unlimited bounce',
-			'Full-day session'
+			'Full-day session',
 		]
 	}
+	// {
+	// 	id: 'a',
+	// 	type: 'all',
+	// 	title: 'Festival Pass',
+	// 	price: 'IDR 50K',
+	// 	per: 'person',
+	// 	features: [
+	// 		'1 pax entry',
+	// 		'50K F&B voucher',
+	// 		'No bounce access',
+	// 		'Full-day session'
+	// 	]
+	// },
+	// {
+	// 	id: 'b',
+	// 	type: 'domestic',
+	// 	title: 'Bounce Pass',
+	// 	price: 'IDR 150K',
+	// 	per: 'person',
+	// 	features: [
+	// 		'1 pax entry',
+	// 		'50K F&B voucher',
+	// 		'Unlimited bounce',
+	// 		'Full-day session'
+	// 	]
+	// },
+	// {
+	// 	id: 'c',
+	// 	type: 'foreign',
+	// 	title: 'Bounce Pass',
+	// 	price: 'IDR 250K',
+	// 	per: 'person',
+	// 	features: [
+	// 		'1 pax entry',
+	// 		'50K F&B voucher',
+	// 		'Unlimited bounce',
+	// 		'Full-day session'
+	// 	]
+	// },
+	// {
+	// 	id: 'd',
+	// 	type: 'domestic',
+	// 	title: '4 Bounce Pass',
+	// 	price: 'IDR 480K',
+	// 	per: '4 pax',
+	// 	features: [
+	// 		'4 pax entry',
+	// 		'4x 50K F&B voucher',
+	// 		'Unlimited bounce',
+	// 		'Full-day session'
+	// 	]
+	// },
+	// {
+	// 	id: 'e',
+	// 	type: 'foreign',
+	// 	title: '4 Bounce Pass',
+	// 	price: 'IDR 800K',
+	// 	per: '4 pax',
+	// 	features: [
+	// 		'4 pax entry',
+	// 		'4x 50K F&B voucher',
+	// 		'Unlimited bounce',
+	// 		'Full-day session'
+	// 	]
+	// }
 ]
 
 export const TicketSection = () => {
@@ -142,7 +166,7 @@ export const TicketSection = () => {
 									<span
 										className={cn('uppercase text-xl font-bold text-white', fonts.knewave.className)}> /{ticket.per}</span>
 								</div>
-								<div className="mt-1 flex justify-between items-end">
+								<div className="mt-1 flex justify-between items-top">
 									<ul className="flex flex-col text-xs text-white font-semibold">
 										{ticket.features.map((feature, index) => (
 											<li key={index} className="flex items-center">
@@ -158,7 +182,7 @@ export const TicketSection = () => {
 											data-rotate={(index + 1) % 2 === 0}
 											data-color={index.toString()}
 											className={cn(
-												'z-10 bg-blue-300 text-white text-4xl px-4 py-1 h-fit w-fit rounded-md data-[rotate=false]:-rotate-3 data-[rotate=true]:rotate-3 mb-1',
+												'mt-2 z-10 bg-blue-300 text-white text-4xl px-4 py-1 h-fit w-fit rounded-md data-[rotate=false]:-rotate-3 data-[rotate=true]:rotate-3 mb-1',
 												'data-[color=0]:bg-blue-500',
 												'data-[color=1]:bg-yellow-500',
 												'data-[color=2]:bg-green-500',
@@ -169,7 +193,6 @@ export const TicketSection = () => {
 										>
 											Book Now
 										</div>
-										<div className="z-0 bg-black w-full h-full"/>
 									</div>
 								</div>
 							</div>
