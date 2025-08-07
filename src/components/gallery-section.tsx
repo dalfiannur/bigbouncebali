@@ -9,15 +9,12 @@ const attractions = [['airspace-pink', 5], ['bounce-house', 11], ['octoblast', 9
 const items = attractions.map(([attraction, index]) => new Array(index).fill(attraction).map((a, i) => '/img/attractions/' + a + `/${i + 1}.webp`)).flat()
 
 export const GallerySection = () => (
-	<div className="flex flex-col gap-4 bg-[url(/img/bg-up.webp)] bg-cover bg-no-repeat bg-bottom">
+	<div className="flex flex-col overflow-hidden gap-4 bg-[url(/img/bg-up.webp)] bg-cover bg-no-repeat bg-bottom">
 		<div
-			className={cn('bg-black uppercase w-fit flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap')}>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
+			className={cn('bg-black uppercase w-fit flex gap-6 flex-nowrap text-white py-6 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-xl font-bold tracking-widest whitespace-nowrap')}>
+			{new Array(25).fill(0).map((_, i) => (
+				<span key={i}>Gallery</span>
+			))}
 		</div>
 		<div>
 			<Swiper
@@ -39,13 +36,10 @@ export const GallerySection = () => (
 			</Swiper>
 		</div>
 		<div
-			className={cn('bg-black w-fit uppercase flex gap-4 flex-nowrap text-white py-4 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-4xl tracking-widest whitespace-nowrap')}>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
-			<span>Gallery -</span>
+			className={cn('bg-black w-fit uppercase flex gap-6 flex-nowrap text-white py-6 px-10 [animation-play-state:running] [animation-duration:20s] [animation-name:marquee] [animation-timing-function:linear] [animation-iteration-count:infinite] text-xl font-bold tracking-widest whitespace-nowrap')}>
+			{new Array(25).fill(0).map((_, i) => (
+				<span key={i}>Gallery</span>
+			))}
 		</div>
 	</div>
 )
